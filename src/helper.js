@@ -7,15 +7,15 @@ export default class DistrictRepository {
 
   reduceData(data) {
     return data.reduce( (acc, obj) => {
-      const district = obj.Location;
-      if (!acc[obj.Location]) {
-        acc[obj.Location] = {
+      const district = obj.Location.toUpperCase();
+
+      if (!acc[district]) {
+        acc[district] = {
           location: district,
           data: {}
         }};
-        acc[obj.Location]= { location: obj.Location.toUpperCase(),
-                            data: { year: obj.TimeFrame,
-                                    percent: obj.Data }};
+
+        Object.assign(acc[district].data, {[obj.TimeFrame] : Math.round([obj.Data*1000])/1000})
 
         return acc;
     }, {})}
