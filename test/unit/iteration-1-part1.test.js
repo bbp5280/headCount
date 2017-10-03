@@ -8,14 +8,14 @@ describe('DistrictRepository iteration 1 - part 1', () =>  {
     expect(district.findByName()).toBe(undefined);
   });
 
-  test.skip('findByName returns undefined when there are no matching arguments', () => {
+  test('findByName returns undefined when there are no matching arguments', () => {
     expect(district.findByName('Vikings')).toBe(undefined);
   });
 
-  test.skip('findByName returns an object with its individual district information', () => {
+  test('findByName returns an object with its individual district information', () => {
 
-    expect(typeof district.findByName('Colorado')).toEqual('object');
-    expect(district.findByName('Colorado').location).toEqual('COLORADO');
+    expect(typeof district.findByName('ADAMS COUNTY 14')).toEqual('object');
+    expect(district.findByName('ADAMS COUNTY 14').location).toEqual('ADAMS COUNTY 14');
   });
 
   test.skip('findByName search is not case sensitive', () => {
