@@ -15,9 +15,16 @@ export default class DistrictRepository {
           data: {}
         }};
 
-        Object.assign(acc[district].data, {[obj.TimeFrame] : Math.round([obj.Data*1000])/1000})
+      const year = [obj.TimeFrame];
+      let percent = Math.round([obj.Data * 1000]) / 1000;
 
-        return acc;
+      if (isNaN(obj.Data)) {
+        percent = 0;
+      }
+
+      Object.assign(acc[district].data, {[year] : percent})
+
+      return acc;
     }, {})}
 
 
