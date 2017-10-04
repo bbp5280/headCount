@@ -44,24 +44,27 @@ export default class DistrictRepository {
     }
   }
 
-  findAllMatches(search){
-    const keysArray = Object.keys(this.data)
-    let dataArray =[]
+  findAllMatches(search) {
+    const keysArray = Object.keys(this.data);
+    let dataArray =[];
 
-    if(!search){
-        keysArray.forEach(location => {
-        dataArray.push(this.data[location])
-      })
-      return dataArray
+    if(!search) {
+        keysArray.forEach(district => {
+        dataArray.push(this.data[district]);
+    })
+      return dataArray;
     }
 
-    const searchResult = keysArray.filter((district)=>{
-      search = search.toUpperCase()
-      return search === district
+    const searchResult = keysArray.filter(district => {
+      search = search.toUpperCase();
+      return district.includes(search);
       })
 
-      dataArray.push(this.data[searchResult])
-      console.log(dataArray);
+      searchResult.forEach( result => {
+        dataArray.push(this.data[result]);
+      })
+      
+      return dataArray;
   }
 
 }
