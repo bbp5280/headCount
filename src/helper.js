@@ -33,8 +33,8 @@ export default class DistrictRepository {
       return undefined;
     }
 
-    const dataArray = Object.keys(this.data);
-    const searchResult = dataArray.find( district =>
+    const keysArray = Object.keys(this.data);
+    const searchResult = keysArray.find( district =>
       search.toUpperCase() === district.toUpperCase());
 
     return this.data[searchResult];
@@ -42,6 +42,26 @@ export default class DistrictRepository {
     if(!searchResult) {
       return undefined;
     }
+  }
+
+  findAllMatches(search){
+    const keysArray = Object.keys(this.data)
+    let dataArray =[]
+
+    if(!search){
+        keysArray.forEach(location => {
+        dataArray.push(this.data[location])
+      })
+      return dataArray
+    }
+
+    const searchResult = keysArray.filter((district)=>{
+      search = search.toUpperCase()
+      return search === district
+      })
+
+      dataArray.push(this.data[searchResult])
+      console.log(dataArray);
   }
 
 }
