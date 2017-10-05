@@ -3,7 +3,7 @@ import './App.css';
 import DistrictRepository from './helper';
 import CardContainer from './CardContainer/CardContainer';
 import kinderData from './../data/kindergartners_in_full_day_program.js';
-
+import Controls from './Controls/Controls'
 
 class App extends Component {
 
@@ -12,6 +12,7 @@ class App extends Component {
     this.state = {
       data: [],
     };
+    this.handleSearch = this.handleSearch.bind(this)
   }
 
   componentDidMount() {
@@ -21,12 +22,26 @@ class App extends Component {
     });
   }
 
+  handleSearch(event){
+    const district = new DistrictRepository(kinderData)
+    const inputValue = event.target.value
+    const updatedValue = district.findAllMatches(inputValue)
+    console.log(this.state);
+    this.setState({
+    data: updatedValue
+  }, ()=>{
+    console.log('callback');
+  });
+  console.log(this.state);
+  }
+
   render() {
     const data = this.state;
 
     return (
 
       <div>
+        <Controls handleSearch={this.handleSearch}/>
         <CardContainer {... data} />
       </div>
     );

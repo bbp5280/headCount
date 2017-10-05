@@ -12,7 +12,7 @@ const CardContainer = ({ data }) => {
 
   return(
     <div>
-      <p> Card conntainer </p>
+    
       {cards}
     </div>
   )
