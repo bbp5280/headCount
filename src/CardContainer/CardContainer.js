@@ -2,17 +2,17 @@ import React from 'react';
 import Card from '../Card/Card';
 // import createFragment from 'react-addons-create-fragment';
 
-const CardContainer = ({ data }) => {
-  // const dataArray = Object.keys(data.data);
+const CardContainer = ({ data, compare }) => {
   const cards = data.map(district => {
-      // console.log(district.location);
     return <Card location={district.location}
-          data={district.data} />
-  })
+                 data={district.data}
+                 key={district.location}
+                 compare={compare}/>
+  });
 
   return(
     <div>
-    
+
       {cards}
     </div>
   )
