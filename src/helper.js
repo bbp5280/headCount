@@ -58,7 +58,7 @@ export default class DistrictRepository {
 
     const searchResult = keysArray.filter(district => {
       search = search.toUpperCase();
-      return district.includes(search);
+      return district.startsWith(search);
       })
 
       searchResult.forEach( result => {
