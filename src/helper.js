@@ -72,7 +72,6 @@ export default class DistrictRepository {
     const yearArray = Object.keys(this.data[district].data);
 
     const addedData = yearArray.reduce( (acc, year) => {
-
       acc = acc + (this.data[district].data[year]);
       return acc;
     }, 0);
@@ -87,7 +86,7 @@ export default class DistrictRepository {
     let diff;
 
     if (district1Average < district2Average) {
-       diff = district1Average / district2Average;
+      diff = district1Average / district2Average;
     } else {
       diff =  district2Average / district1Average;
     }
