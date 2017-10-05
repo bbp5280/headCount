@@ -35,10 +35,10 @@ class App extends Component {
   }
 
   compareDistricts(district) {
-    console.log('clicked');
-    const updatedCompareArray = [...this.state.compareArray, district];
-    this.setState({compareArray: updatedCompareArray});
-    console.log(this.state.compareArray);
+    if (this.state.compareArray.length < 2) {
+      const updatedCompareArray = [...this.state.compareArray, district];
+      this.setState({compareArray: updatedCompareArray});
+    }
   }
 
   render() {
@@ -46,7 +46,8 @@ class App extends Component {
 
     return (
       <div>
-        <CompareContainer />
+        <CompareContainer
+          compareArray={this.state.compareArray}/>
         <Controls handleSearch={this.handleSearch}/>
         <CardContainer {... data} compare={this.compareDistricts}/>
       </div>
