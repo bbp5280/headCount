@@ -5,6 +5,7 @@ import CardContainer from './CardContainer/CardContainer';
 import kinderData from './../data/kindergartners_in_full_day_program.js';
 import Controls from './Controls/Controls';
 import CompareContainer from './CompareContainer/CompareContainer';
+import Header from './Header/Header';
 
 class App extends Component {
 
@@ -46,6 +47,7 @@ class App extends Component {
 
     return (
       <div>
+        <Header />
         <CompareContainer
           compareArray={this.state.compareArray}/>
         <Controls handleSearch={this.handleSearch}/>
