@@ -38,6 +38,9 @@ class App extends Component {
     if (this.state.compareArray.length < 2) {
       const updatedCompareArray = [...this.state.compareArray, district];
       this.setState({compareArray: updatedCompareArray});
+    } if(this.state.compareArray.length === 2) {
+      const updatedCompareArray = [district];
+      this.setState({compareArray: updatedCompareArray});
     }
   }
 
