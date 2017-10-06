@@ -4,9 +4,11 @@ import styles from '../index.css';
 
 const Card = ({ location, data, compare }) => {
   const yearArray = Object.keys(data);
-  const mappedYears = yearArray.map((year) => {
-    //chart needs to be built here - ?
-    return <li key={year} className="li">{year}: {data[year]}</li>
+
+
+  const mappedYears = yearArray.map(year => {
+    return <li key={year}>{year}: {data[year]}</li>
+
   });
 
   const clickHandler = () => {
