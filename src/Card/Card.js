@@ -2,10 +2,10 @@ import React from 'react';
 import styles from './card-styles.css';
 
 const Card = ({ location, data, compare }) => {
-  const yearArray = Object.keys(data)
+  const yearArray = Object.keys(data);
 
-  const mappedYears = yearArray.map((year) => {
-    return <li>{year}: {data[year]}</li>
+  const mappedYears = yearArray.map(year => {
+    return <li key={year}>{year}: {data[year]}</li>
   });
 
   const clickHandler = () => {
