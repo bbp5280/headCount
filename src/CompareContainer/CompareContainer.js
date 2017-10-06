@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import Card from '../Card/Card';
+import styles from '../index.css';
 import DistrictRepository from '../helper'
 import kinderData from './../../data/kindergartners_in_full_day_program.js';
-
 
 class CompareContainer extends Component {
   constructor() {

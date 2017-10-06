@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './header-styles.css';
+import styles from '../index.css';
 //import Chart from 'chart.js';
 
 const Header = () => {
