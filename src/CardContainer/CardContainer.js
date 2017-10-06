@@ -1,6 +1,6 @@
 import React from 'react';
 import Card from '../Card/Card';
-// import createFragment from 'react-addons-create-fragment';
+import styles from './card-container-styles.css';
 
 const CardContainer = ({ data, compare }) => {
   const cards = data.map(district => {
@@ -11,8 +11,7 @@ const CardContainer = ({ data, compare }) => {
   });
 
   return(
-    <div>
-
+    <div className="card-container">
       {cards}
     </div>
   )

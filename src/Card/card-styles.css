@@ -1,6 +1,27 @@
 .card {
-  border: 1px solid red;
-  width: 20%;
+  border: 1px solid #e4e4e4;
+  background-color: #fff;
+  width: 95%;
+  margin: 0 auto;
+  margin-top: 25px;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.district {
   display: inline-block;
-  margin: 10px;
+  color: #B71C1C;
+  font-family: sans-serif;
+}
+
+.compare-btn {
+  display: block;
+}
+
+.list {
+  display: inline-block;
+}
+
+.li {
+  display: inline-block;
 }

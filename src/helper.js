@@ -2,8 +2,8 @@ import kinderData from './../data/kindergartners_in_full_day_program.js';
 
 export default class DistrictRepository {
   constructor(data) {
-    this.data = this.reduceData(data)
-    this.reduceData = this.reduceData.bind(this)
+    this.data = this.reduceData(data);
+    this.reduceData = this.reduceData.bind(this);
   }
 
   reduceData(data) {
@@ -23,7 +23,7 @@ export default class DistrictRepository {
         percent = 0;
       }
 
-      Object.assign(acc[district].data, {[year] : percent})
+      Object.assign(acc[district].data, {[year] : percent});
 
       return acc;
     }, {})}
