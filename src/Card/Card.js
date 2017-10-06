@@ -1,23 +1,24 @@
 import React from 'react';
 import styles from './card-styles.css';
+//import Chart from 'chart.js';
 
 const Card = ({ location, data, compare }) => {
-  const yearArray = Object.keys(data)
-
+  const yearArray = Object.keys(data);
   const mappedYears = yearArray.map((year) => {
-    return <li>{year}: {data[year]}</li>
+    //chart needs to be built here - ?
+    return <li key={year} className="li">{year}: {data[year]}</li>
   });
 
   const clickHandler = () => {
     compare({location: {location},
-              data: {data} })
+              data: {data} });
   }
 
   return (
     <div className="card">
-      <button onClick={clickHandler}>Compare Me!</button>
-      <h3>{location}</h3>
-      <ul>
+      <button className="compare-btn" onClick={clickHandler}>+</button>
+      <h3 className="district">{location}</h3>
+      <ul className="list">
         {mappedYears}
       </ul>
     </div>);
