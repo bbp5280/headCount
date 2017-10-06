@@ -5,7 +5,7 @@ const Controls = ({handleSearch}) =>{
 return (
 <div>
   <input type='text'
-         placeholder='Search Districts'
+         placeholder='Search by District'
          onChange={handleSearch} />
 </div>
 )
