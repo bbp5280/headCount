@@ -1,7 +1,8 @@
 import React from 'react'
+import styles from '../index.css';
 
 const Controls = ({handleSearch}) =>{
-return(
+return (
 <div>
   <input type='text'
          placeholder='Search Districts'
@@ -9,6 +10,5 @@ return(
 </div>
 )
 }
-
 
 export default Controls;

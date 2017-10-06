@@ -1,6 +1,6 @@
 import React from 'react';
 import Card from '../Card/Card';
-import styles from './card-container-styles.css';
+import styles from '../index.css';
 
 const CardContainer = ({ data, compare }) => {
   const cards = data.map(district => {

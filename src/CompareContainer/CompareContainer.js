@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Card from '../Card/Card';
+import styles from '../index.css';
 
 class CompareContainer extends Component {
   // constructor() {

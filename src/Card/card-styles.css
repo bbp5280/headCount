@@ -5,23 +5,18 @@
   margin: 0 auto;
   margin-top: 25px;
   border-radius: 5px;
-  padding: 5px;
-}
+  padding: 5px; }
 
 .district {
   display: inline-block;
   color: #B71C1C;
-  font-family: sans-serif;
-}
+  font-family: sans-serif; }
 
 .compare-btn {
-  display: block;
-}
+  display: block; }
 
 .list {
-  display: inline-block;
-}
+  display: inline-block; }
 
 .li {
-  display: inline-block;
-}
+  display: inline-block; }

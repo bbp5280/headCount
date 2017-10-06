@@ -1,10 +1,7 @@
 .header {
-  background-image:
-  linear-gradient(to right, #D12312, #E83007);
-  padding: 20px;
-}
+  background-image: linear-gradient(to right, #D12312, #E83007);
+  padding: 20px; }
 
 h1 {
   color: #fff;
-  font-family: sans-serif;
-}
+  font-family: sans-serif; }

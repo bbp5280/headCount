@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './card-styles.css';
+import styles from '../index.css';
 //import Chart from 'chart.js';
 
 const Card = ({ location, data, compare }) => {

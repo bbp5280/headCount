@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import './App.css';
 import DistrictRepository from './helper';
 import CardContainer from './CardContainer/CardContainer';
 import kinderData from './../data/kindergartners_in_full_day_program.js';
 import Controls from './Controls/Controls';
 import CompareContainer from './CompareContainer/CompareContainer';
 import Header from './Header/Header';
+import './index.css';
 
 class App extends Component {
 
