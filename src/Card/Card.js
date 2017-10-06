@@ -1,13 +1,12 @@
 import React from 'react';
 import styles from './card-styles.css';
-import Chart from 'chart.js';
+//import Chart from 'chart.js';
 
 const Card = ({ location, data, compare }) => {
   const yearArray = Object.keys(data);
-  console.log(yearArray, data);
   const mappedYears = yearArray.map((year) => {
     //chart needs to be built here - ?
-    return <li className="li">{year}: {data[year]}</li>
+    return <li key={year} className="li">{year}: {data[year]}</li>
   });
 
   const clickHandler = () => {
