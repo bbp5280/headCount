@@ -14,8 +14,10 @@ class App extends Component {
     super()
     this.state = {
       data: [],
-      compareArray: []
+      compareArray: [],
+      comparisonData: {}
     };
+
     this.districts = new DistrictRepository(kinderData);
     this.handleSearch = this.handleSearch.bind(this);
     this.compareDistricts = this.compareDistricts.bind(this);
@@ -36,21 +38,37 @@ class App extends Component {
   }
 
   compareDistricts(district) {
-    if (this.state.compareArray.length < 2) {
+    if (this.state.compareArray.length === 0) {
       const updatedCompareArray = [...this.state.compareArray, district];
       this.setState({compareArray: updatedCompareArray});
     }
+
+    if (this.state.compareArray.length === 1) {
+      const updatedCompareArray = [...this.state.compareArray, district];
+      this.setState({compareArray: updatedCompareArray}, () => this.getData(this.state.compareArray));
+      ;
+    }
+
     if (this.state.compareArray.length === 2) {
       const updatedCompareArray = [district];
       this.setState({compareArray: updatedCompareArray});
     }
+
   }
+
+  getData(compareArray) {
+    console.log(compareArray );
+    const comparison = this.districts.compareDistrictAverages(compareArray[0], compareArray[1]);
+    console.log(comparison);
+    this.setState({ comparisonData: comparison });
+  }
+
 
   renderCompareContainer() {
       if (this.state.compareArray.length === 2) {
-        console.log('if');
-        return <CompareContainer
-          compareArray={this.state.compareArray} districts={this.districts}/>
+        return <CompareContainer compareArray={this.state.compareArray}
+                                 districts={this.districts}
+                                 comparisonData={this.state.comparisonData}/>
       }
   }
 

@@ -22,8 +22,7 @@ const Card = ({ location, data, compare }) => {
   });
 
   const clickHandler = () => {
-
-    compare({location});
+    compare(location);
   }
 
   return (

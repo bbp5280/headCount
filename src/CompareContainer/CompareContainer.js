@@ -1,45 +1,31 @@
 import React, { Component } from 'react';
 import Card from '../Card/Card';
+import CompareCard from '../CompareCard/CompareCard';
 import styles from '../index.css';
 import DistrictRepository from '../helper'
 import kinderData from './../../data/kindergartners_in_full_day_program.js';
 
-class CompareContainer extends Component {
-  constructor() {
-    super();
-    this.state = {
-      compareData: {}
-    }
-  }
+const CompareContainer = ({ compareArray, districts, comparisonData }) => {
 
-  componentWillReceiveProps(nextProps) {
-    //this.compareData(nextProps)
-  }
-
-  compareData(props) {
-    console.log(props.compareArray);
-  }
-
-  getCard(props) {
-    //console.log(this.props.districts);
-    const district1 = this.props.districts.findByName(this.props.compareArray[0].location);
-    const district2 = this.props.districts.findByName(this.props.compareArray[1].location);
+  const getCard = () => {
+    const district1 = districts.findByName(compareArray[0]);
+    const district2 = districts.findByName(compareArray[1]);
     return [district1, district2];
   }
 
+  const comparedDistricts = getCard().map ( district => {
+    return <Card location={district.location}
+                 data={district.data}
+                 key={district.location} />
+  })
 
-  render() {
-    console.log(this.getCard());
-    const comparedDistricts = this.getCard().map ( district => {
-      return <Card location={district.location}
-                   data={district.data}
-                   key={district.location} />
-    })
+  return (
+    <div>
+      <CompareCard comparisonData={comparisonData} />
+      {comparedDistricts}
+    </div>
+  )
 
-    return (
-      <div>{comparedDistricts}</div>
-    )
-  }
 }
 
 export default CompareContainer;
