@@ -1,0 +1,12 @@
+@import "./Card/card-styles.css";
+@import "./CardContainer/card-container-styles.css";
+@import "./CompareContainer/compare-container-styles.css";
+@import "./Controls/controls-styles.css";
+@import "./Header/header-styles.css";
+@import "./Footer/footer-styles.css";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}

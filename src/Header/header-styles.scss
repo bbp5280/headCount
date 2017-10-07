@@ -1,11 +1,18 @@
+@import url(https://fonts.googleapis.com/css?family=Lato);
+
 .header {
   background-image:
-  linear-gradient(to right, #e64f40, #EC593F);
+  linear-gradient(to right, #e64f40, #EF6544);
   padding: 25px;
-  font-size: 125%;
+  font-size: 130%;
 }
 
 h1 {
   color: #fff;
-  font-family: sans-serif;
+  font-family: 'Lato', sans-serif;
+}
+
+img {
+  height: 40px;
+  width: auto;
 }

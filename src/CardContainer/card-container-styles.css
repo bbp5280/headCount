@@ -1,2 +1,6 @@
 .card-container {
-  background-color: #f3f3f3; }
+  background-color: #f3f3f3;
+  padding-bottom: 20%; }
+
+.data-info {
+  margin: 25px; }
