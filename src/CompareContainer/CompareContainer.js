@@ -4,6 +4,7 @@ import CompareCard from '../CompareCard/CompareCard';
 import styles from '../index.css';
 import DistrictRepository from '../helper'
 import kinderData from './../../data/kindergartners_in_full_day_program.js';
+import PropTypes from 'prop-types';
 
 const CompareContainer = ({ compareArray, districts, comparisonData }) => {
 
@@ -25,7 +26,12 @@ const CompareContainer = ({ compareArray, districts, comparisonData }) => {
       {comparedDistricts}
     </div>
   )
-
 }
+
+Card.propTypes = {
+  compareArray: PropTypes.array,
+  districts: PropTypes.object,
+  comparisonData: PropTypes.object
+};
 
 export default CompareContainer;

@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from '../index.css';
-//import Chart from 'chart.js';
+import PropTypes from 'prop-types';
 
 const Card = ({ location, data, compare }) => {
   const yearArray = Object.keys(data);
@@ -31,9 +31,15 @@ const Card = ({ location, data, compare }) => {
       <ul className="list">
         {mappedYears}
       </ul>
-      <button className="compare-btn" onClick={clickHandler}>
+      <button className="compare-btn" onClick={clickHandler}>Click to Compare
       </button>
     </div>);
+};
+
+Card.propTypes = {
+  location: PropTypes.string.isRequired,
+  data: PropTypes.objectOf(PropTypes.number).isRequired,
+  compare: PropTypes.func.isRequired
 };
 
 export default Card;
