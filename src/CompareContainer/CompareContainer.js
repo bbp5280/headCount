@@ -1,50 +1,31 @@
 import React, { Component } from 'react';
 import Card from '../Card/Card';
+import CompareCard from '../CompareCard/CompareCard';
 import styles from '../index.css';
 import DistrictRepository from '../helper'
 import kinderData from './../../data/kindergartners_in_full_day_program.js';
 
-class CompareContainer extends Component {
-  constructor() {
-    super();
-    this.state = {
-      compareData: {}
-    }
+const CompareContainer = ({ compareArray, districts, comparisonData }) => {
+
+  const getCard = () => {
+    const district1 = districts.findByName(compareArray[0]);
+    const district2 = districts.findByName(compareArray[1]);
+    return [district1, district2];
   }
 
-  componentWillReceiveProps(nextProps){
-    this.compareData(nextProps)
-  }
+  const comparedDistricts = getCard().map ( district => {
+    return <Card location={district.location}
+                 data={district.data}
+                 key={district.location} />
+  })
 
-  compareData(props){
-    const district1 = props.compareArray[0]
-    const district2 = props.compareArray.splice(0,1)
-    const obj = Object.assign({}, district1)
-    console.log(obj.location)
+  return (
+    <div>
+      <CompareCard comparisonData={comparisonData} />
+      {comparedDistricts}
+    </div>
+  )
 
-    const district = new DistrictRepository(kinderData)
-    // const averages = district.compareDistrictAverages(district1, district2 )
-      // console.log(averages);
-  }
-
-//move or call this in props change life cycle
-
-// will render or mount thing when all parts are there only
-
-//possibly use prep dom for render to get things in right order
-
-  render() {
-
-    const comparedDistricts = this.props.compareArray.map ( district => {
-      return <Card location={district.location.location}
-                   data={district.data.data}
-                   key={district.location.location} />
-    })
-
-    return (
-      <div>{comparedDistricts}</div>
-    )
-  }
 }
 
 export default CompareContainer;

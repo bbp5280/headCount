@@ -14,35 +14,62 @@ class App extends Component {
     super()
     this.state = {
       data: [],
-      compareArray: []
+      compareArray: [],
+      comparisonData: {}
     };
+
+    this.districts = new DistrictRepository(kinderData);
     this.handleSearch = this.handleSearch.bind(this);
-    this.compareDistricts = this.compareDistricts.bind(this);  }
+    this.compareDistricts = this.compareDistricts.bind(this);
+  }
 
   componentDidMount() {
-    const district = new DistrictRepository(kinderData)
     this.setState({
-      data: district.findAllMatches()
+      data: this.districts.findAllMatches()
     });
   }
 
   handleSearch(event) {
-    const district = new DistrictRepository(kinderData)
     const inputValue = event.target.value
-    const updatedValue = district.findAllMatches(inputValue)
+    const updatedValue = this.districts.findAllMatches(inputValue)
     this.setState({
       data: updatedValue
     });
   }
 
   compareDistricts(district) {
-    if (this.state.compareArray.length < 2) {
+    if (this.state.compareArray.length === 0) {
       const updatedCompareArray = [...this.state.compareArray, district];
       this.setState({compareArray: updatedCompareArray});
-    } if(this.state.compareArray.length === 2) {
+    }
+
+    if (this.state.compareArray.length === 1) {
+      const updatedCompareArray = [...this.state.compareArray, district];
+      this.setState({compareArray: updatedCompareArray}, () => this.getData(this.state.compareArray));
+      ;
+    }
+
+    if (this.state.compareArray.length === 2) {
       const updatedCompareArray = [district];
       this.setState({compareArray: updatedCompareArray});
     }
+
+  }
+
+  getData(compareArray) {
+    console.log(compareArray );
+    const comparison = this.districts.compareDistrictAverages(compareArray[0], compareArray[1]);
+    console.log(comparison);
+    this.setState({ comparisonData: comparison });
+  }
+
+
+  renderCompareContainer() {
+      if (this.state.compareArray.length === 2) {
+        return <CompareContainer compareArray={this.state.compareArray}
+                                 districts={this.districts}
+                                 comparisonData={this.state.comparisonData}/>
+      }
   }
 
   render() {
@@ -51,10 +78,11 @@ class App extends Component {
     return (
       <div>
         <Header />
-        <Controls handleSearch={this.handleSearch}/>
-        <CompareContainer
-          compareArray={this.state.compareArray}/>
-        <CardContainer {... data} compare={this.compareDistricts}/>
+        <Controls handleSearch={this.handleSearch} />
+        {this.renderCompareContainer()}
+
+        <CardContainer {... data} compare={this.compareDistricts}
+                                   />
         <Footer />
       </div>
     );
