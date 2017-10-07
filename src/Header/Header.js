@@ -1,7 +1,5 @@
 import React from 'react';
 import styles from '../index.css';
-//import Chart from 'chart.js';
-import Controls from '../Controls/Controls';
 
 const Header = () => {
     return (

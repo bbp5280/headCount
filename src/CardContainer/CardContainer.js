@@ -12,6 +12,7 @@ const CardContainer = ({ data, compare }) => {
 
   return(
     <div className="card-container">
+      <h2 className="data-info">Percent of Students in Enrolled in full-day Kinder</h2>
       {cards}
     </div>
   )

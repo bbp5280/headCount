@@ -5,9 +5,19 @@ import styles from '../index.css';
 const Card = ({ location, data, compare }) => {
   const yearArray = Object.keys(data);
 
+  // findDistrictAverage() {
+    const districtSum = yearArray.reduce((acc, year) => {
+      acc += data[year];
+      return acc;
+    }, 0);
+
+    const districtAverage = Math.round((districtSum / 10) * 1000) / 1000;
+    //console.log(districtAverage);
+    //return findAverage;
+  //}
 
   const mappedYears = yearArray.map(year => {
-    return <li key={year}><span className="bold-year">{year}:</span> {data[year]}</li>
+    return <li key={year}><span className="bold-year">{year}:</span>{data[year]}</li>
 
   });
 

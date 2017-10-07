@@ -5,6 +5,7 @@ import kinderData from './../data/kindergartners_in_full_day_program.js';
 import Controls from './Controls/Controls';
 import CompareContainer from './CompareContainer/CompareContainer';
 import Header from './Header/Header';
+import Footer from './Footer/Footer';
 import './index.css';
 
 class App extends Component {
@@ -29,7 +30,6 @@ class App extends Component {
     const district = new DistrictRepository(kinderData)
     const inputValue = event.target.value
     const updatedValue = district.findAllMatches(inputValue)
-    console.log(this.state);
     this.setState({
       data: updatedValue
     });
@@ -55,6 +55,7 @@ class App extends Component {
         <CompareContainer
           compareArray={this.state.compareArray}/>
         <CardContainer {... data} compare={this.compareDistricts}/>
+        <Footer />
       </div>
     );
   }
