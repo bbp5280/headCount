@@ -7,7 +7,7 @@ const Card = ({ location, data, compare }) => {
 
 
   const mappedYears = yearArray.map(year => {
-    return <li key={year}>{year}: {data[year]}</li>
+    return <li key={year}><span className="bold-year">{year}:</span> {data[year]}</li>
 
   });
 
@@ -18,11 +18,12 @@ const Card = ({ location, data, compare }) => {
 
   return (
     <div className="card">
-      <button className="compare-btn" onClick={clickHandler}>+</button>
       <h3 className="district">{location}</h3>
       <ul className="list">
         {mappedYears}
       </ul>
+      <button className="compare-btn" onClick={clickHandler}>
+      </button>
     </div>);
 };
 

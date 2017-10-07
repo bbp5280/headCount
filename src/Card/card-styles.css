@@ -1,22 +1,50 @@
+@import url(https://fonts.googleapis.com/css?family=Lato);
+* {
+  font-family: 'Lato', sans-serif; }
+
 .card {
   border: 1px solid #e4e4e4;
   background-color: #fff;
-  width: 95%;
+  width: 70%;
   margin: 0 auto;
   margin-top: 25px;
   border-radius: 5px;
-  padding: 5px; }
+  padding: 5px;
+  display: flex;
+  justify-content: space-between; }
 
 .district {
-  display: inline-block;
-  color: #B71C1C;
-  font-family: sans-serif; }
+  color: #e64f40;
+  width: 35%;
+  margin-left: 7%;
+  margin-top: 2.5%; }
 
 .compare-btn {
-  display: block; }
+  border: none;
+  background-color: #e64f40;
+  padding: 4px 9px;
+  border-radius: 3px;
+  margin-right: 7%;
+  margin-top: 2.5%;
+  height: 30px;
+  width: 30px; }
+
+.compare-btn:hover {
+  background-color: #F38C73; }
+
+.toggle-compare-btn {
+  background-color: #f3f3f3; }
+
+p {
+  font-size: 125%;
+  color: #fff; }
 
 .list {
-  display: inline-block; }
+  display: inline-block;
+  margin: 2.5% 0 2.5% -25%; }
 
 .li {
   display: inline-block; }
+
+.bold-year {
+  font-weight: bold; }

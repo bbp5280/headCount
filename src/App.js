@@ -51,9 +51,9 @@ class App extends Component {
     return (
       <div>
         <Header />
+        <Controls handleSearch={this.handleSearch}/>
         <CompareContainer
           compareArray={this.state.compareArray}/>
-        <Controls handleSearch={this.handleSearch}/>
         <CardContainer {... data} compare={this.compareDistricts}/>
       </div>
     );
