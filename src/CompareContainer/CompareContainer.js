@@ -12,33 +12,28 @@ class CompareContainer extends Component {
     }
   }
 
-  componentWillReceiveProps(nextProps){
-    this.compareData(nextProps)
+  componentWillReceiveProps(nextProps) {
+    //this.compareData(nextProps)
   }
 
-  compareData(props){
-    const district1 = props.compareArray[0]
-    const district2 = props.compareArray.splice(0,1)
-    const obj = Object.assign({}, district1)
-    console.log(obj.location)
-
-    const district = new DistrictRepository(kinderData)
-    // const averages = district.compareDistrictAverages(district1, district2 )
-      // console.log(averages);
+  compareData(props) {
+    console.log(props.compareArray);
   }
 
-//move or call this in props change life cycle
+  getCard(props) {
+    //console.log(this.props.districts);
+    const district1 = this.props.districts.findByName(this.props.compareArray[0].location);
+    const district2 = this.props.districts.findByName(this.props.compareArray[1].location);
+    return [district1, district2];
+  }
 
-// will render or mount thing when all parts are there only
-
-//possibly use prep dom for render to get things in right order
 
   render() {
-
-    const comparedDistricts = this.props.compareArray.map ( district => {
-      return <Card location={district.location.location}
-                   data={district.data.data}
-                   key={district.location.location} />
+    console.log(this.getCard());
+    const comparedDistricts = this.getCard().map ( district => {
+      return <Card location={district.location}
+                   data={district.data}
+                   key={district.location} />
     })
 
     return (

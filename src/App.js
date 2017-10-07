@@ -16,20 +16,20 @@ class App extends Component {
       data: [],
       compareArray: []
     };
+    this.districts = new DistrictRepository(kinderData);
     this.handleSearch = this.handleSearch.bind(this);
-    this.compareDistricts = this.compareDistricts.bind(this);  }
+    this.compareDistricts = this.compareDistricts.bind(this);
+  }
 
   componentDidMount() {
-    const district = new DistrictRepository(kinderData)
     this.setState({
-      data: district.findAllMatches()
+      data: this.districts.findAllMatches()
     });
   }
 
   handleSearch(event) {
-    const district = new DistrictRepository(kinderData)
     const inputValue = event.target.value
-    const updatedValue = district.findAllMatches(inputValue)
+    const updatedValue = this.districts.findAllMatches(inputValue)
     this.setState({
       data: updatedValue
     });
@@ -39,10 +39,19 @@ class App extends Component {
     if (this.state.compareArray.length < 2) {
       const updatedCompareArray = [...this.state.compareArray, district];
       this.setState({compareArray: updatedCompareArray});
-    } if(this.state.compareArray.length === 2) {
+    }
+    if (this.state.compareArray.length === 2) {
       const updatedCompareArray = [district];
       this.setState({compareArray: updatedCompareArray});
     }
+  }
+
+  renderCompareContainer() {
+      if (this.state.compareArray.length === 2) {
+        console.log('if');
+        return <CompareContainer
+          compareArray={this.state.compareArray} districts={this.districts}/>
+      }
   }
 
   render() {
@@ -51,10 +60,11 @@ class App extends Component {
     return (
       <div>
         <Header />
-        <Controls handleSearch={this.handleSearch}/>
-        <CompareContainer
-          compareArray={this.state.compareArray}/>
-        <CardContainer {... data} compare={this.compareDistricts}/>
+        <Controls handleSearch={this.handleSearch} />
+        {this.renderCompareContainer()}
+
+        <CardContainer {... data} compare={this.compareDistricts}
+                                   />
         <Footer />
       </div>
     );
