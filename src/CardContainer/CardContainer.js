@@ -1,6 +1,7 @@
 import React from 'react';
 import Card from '../Card/Card';
 import styles from '../index.css';
+import PropTypes from 'prop-types';
 
 const CardContainer = ({ data, compare }) => {
   const cards = data.map(district => {
@@ -12,10 +13,15 @@ const CardContainer = ({ data, compare }) => {
 
   return(
     <div className="card-container">
-      <h2 className="data-info">Percent of Students in Enrolled in full-day Kinder</h2>
+      <h2 className="data-info">Percent of Students in Enrolled in Full Day Kinder</h2>
       {cards}
     </div>
   )
 }
+
+Card.propTypes = {
+  data: PropTypes.object.isRequired,
+  compare: PropTypes.func.isRequired
+};
 
 export default CardContainer;
