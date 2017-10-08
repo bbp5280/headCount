@@ -8,7 +8,8 @@ const CardContainer = ({ data, compare }) => {
     return <Card location={district.location}
                  data={district.data}
                  key={district.location}
-                 compare={compare}/>
+                 compare={compare}
+                />
   });
 
   return(
