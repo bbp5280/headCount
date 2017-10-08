@@ -20,3 +20,11 @@
 
 .district-avg {
   text-align: center; }
+
+@media (max-width: 950px) {
+  .compare-card {
+    width: 85%; } }
+
+@media (max-width: 650px) {
+  .compare-card {
+    width: 95%; } }

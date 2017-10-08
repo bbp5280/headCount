@@ -1,0 +1,29 @@
+img {
+  height: 40px;
+}
+.scroll-top {
+  float: right;
+  // margin-right: 1%;
+  margin-bottom: 1.5%;
+  margin-right: 5%;
+  width: 40px;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+
+@media (max-width: 950px) {
+
+  img {
+    width: 30px;
+  }
+
+}
+
+@media (max-width: 650px) {
+
+  img {
+    width: 25px;
+  }
+
+}

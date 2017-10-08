@@ -3,9 +3,7 @@ import styles from '../index.css';
 
 const Footer = () => {
     return (
-    <footer className="footer">
-      <button>Back to Top</button>
-    </footer>
+    <footer className="footer"></footer>
   )
 }
 
