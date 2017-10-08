@@ -6,8 +6,12 @@ const Card = ({ location, data, compare, forCompare }) => {
   const yearArray = Object.keys(data);
 
   const mappedYears = yearArray.map(year => {
-    return <li key={year}><span className="bold-year">{year}:</span>{data[year]}</li>
-
+    return (
+      <div className="info-container" key={year}>
+        <span className="data">{data[year]}</span>
+        <span className="year">{year}</span>
+      </div>
+    )
   });
 
   const clickHandler = () => {
