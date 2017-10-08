@@ -16,7 +16,7 @@ class App extends Component {
     this.state = {
       data: [],
       compareArray: [],
-      comparisonData: {}
+      comparisonData: {},
     };
 
     this.districts = new DistrictRepository(kinderData);
@@ -90,10 +90,9 @@ class App extends Component {
         <Controls handleSearch={this.handleSearch} />
         {this.renderCompareContainer()}
 
-        <CardContainer {... data} compare={this.compareDistricts}
-                                   />
-        <ScrollBtn />
-        <Footer />
+        <CardContainer {... data}
+          compare={this.compareDistricts}
+          toggleStateActive={this.toggleStateActive}     />        <Footer />
       </div>
     );
   }
