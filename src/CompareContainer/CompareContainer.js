@@ -10,8 +10,7 @@ const CompareContainer = ({ compareArray, districts, comparisonData }) => {
 
   const getCard = () => {
     const district1 = districts.findByName(compareArray[0]);
-    const district2 = districts.findByName(compareArray[1]);
-    return [district1, district2];
+    return [district1]
   }
 
   const getAvg = () => {

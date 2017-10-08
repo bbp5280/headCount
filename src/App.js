@@ -37,29 +37,26 @@ class App extends Component {
     });
   }
 
+  getDataReady(district) {if (this.state.compareArray === 1){
+      const updatedCompareArray = [...this.state.compareArray, district];
+      this.setState({compareArray: updatedCompareArray}, () => this.getData(this.state.compareArray))
+  }
+}
+
   compareDistricts(district) {
-    if (this.state.compareArray.length === 0) {
       const updatedCompareArray = [...this.state.compareArray, district];
-      this.setState({compareArray: updatedCompareArray});
-    }
+      this.setState({compareArray: updatedCompareArray}, () => this.getDataReady(district));
 
-    if (this.state.compareArray.length === 1) {
-      const updatedCompareArray = [...this.state.compareArray, district];
-      this.setState({compareArray: updatedCompareArray}, () => this.getData(this.state.compareArray));
-      ;
-    }
-
-    if (this.state.compareArray.length === 2) {
-      const updatedCompareArray = [district];
-      this.setState({compareArray: updatedCompareArray});
-    }
-
+    // if (this.state.compareArray.length === 2) {
+    //   const updatedCompareArray = [district];
+    //   this.setState({compareArray: updatedCompareArray});
+    // }
   }
 
+
+
   getData(compareArray) {
-    console.log(compareArray );
     const comparison = this.districts.compareDistrictAverages(compareArray[0], compareArray[1]);
-    console.log(comparison);
     this.setState({ comparisonData: comparison });
   }
 
