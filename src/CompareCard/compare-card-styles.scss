@@ -1,3 +1,25 @@
-p {
-  color: red;
+.compare-card {
+  width: 75%;
+  display: block;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #e4e4e4;
+  border-radius: 5px;
+  background-color: #fff;
+  padding: 12px;
+  margin-top: 20px;
+}
+
+.district-name {
+    color: #e64f40;
+    font-size: 115%;
+    text-align: center;
+    margin: 0 12px 3px 12px;
+}
+
+.district-avg {
+  text-align: center;
 }
