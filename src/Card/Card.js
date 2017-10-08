@@ -2,19 +2,8 @@ import React from 'react';
 import styles from '../index.css';
 import PropTypes from 'prop-types';
 
-const Card = ({ location, data, compare }) => {
+const Card = ({ location, data, compare, forCompare }) => {
   const yearArray = Object.keys(data);
-
-  // findDistrictAverage() {
-    // const districtSum = yearArray.reduce((acc, year) => {
-    //   acc += data[year];
-    //   return acc;
-    // }, 0);
-    //
-    // const districtAverage = Math.round((districtSum / 10) * 1000) / 1000;
-    //console.log(districtAverage);
-    //return findAverage;
-  //}
 
   const mappedYears = yearArray.map(year => {
     return <li key={year}><span className="bold-year">{year}:</span>{data[year]}</li>
@@ -25,21 +14,44 @@ const Card = ({ location, data, compare }) => {
     compare(location);
   }
 
-  return (
-    <div className="card">
+  const buildCards = (year, click) => {
+
+    if(forCompare === true){
+      return(
+      <div>
+        <h3 className="district">{location}</h3>
+        <ul className="list">
+          {year}
+        </ul>
+        <button className="compare-btn" onClick={click}>Remove
+        </button>
+      </div>)
+  } else {
+    return(
+      <div>
       <h3 className="district">{location}</h3>
       <ul className="list">
-        {mappedYears}
+        {year}
       </ul>
-      <button className="compare-btn" onClick={clickHandler}>Click to Compare
+      <button className="compare-btn" onClick={click}>Click to Compair
       </button>
-    </div>);
-};
+    </div>
+  )}
+
+  }
+
+  return (
+
+    <div className="card">
+      {buildCards(mappedYears, clickHandler)}
+    </div>
+  )
 
 Card.propTypes = {
   location: PropTypes.string.isRequired,
   data: PropTypes.objectOf(PropTypes.number).isRequired,
   compare: PropTypes.func.isRequired
-};
+ }
+}
 
 export default Card;

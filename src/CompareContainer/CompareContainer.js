@@ -17,7 +17,6 @@ const CompareContainer = ({ compareArray, districts, comparisonData }) => {
   const getAvg = () => {
     const dist1Avg = districts.findAverage(compareArray[0]);
     const dist2Avg = districts.findAverage(compareArray[1]);
-    console.log(dist1Avg, dist2Avg);
     return { district1: compareArray[0],
              district1Average: dist1Avg,
              district2: compareArray[1],
@@ -26,9 +25,11 @@ const CompareContainer = ({ compareArray, districts, comparisonData }) => {
   }
 
   const comparedDistricts = getCard().map ( district => {
+      district['forCompare'] = true
     return <Card location={district.location}
                  data={district.data}
-                 key={district.location} />
+                 key={district.location}
+                forCompare={district.forCompare}/>
   })
 
   return (
