@@ -5,49 +5,57 @@
 .card {
   border: 1px solid #e4e4e4;
   background-color: #fff;
-  width: 65%;
+  width: 70%;
   margin: 0 auto;
   margin-top: 25px;
   border-radius: 5px;
   padding: 5px;
+  padding-top: 17px; }
+
+.top-of-card {
   display: flex;
-  justify-content: space-between; }
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  width: 100%; }
 
 .district {
   color: #e64f40;
   width: 35%;
-  margin-left: 5%;
-  margin-top: 2.5%;
+  margin-left: 12px;
   font-size: 120%; }
-
-p {
-  font-size: 125%;
-  color: #fff; }
-
-.list {
-  display: inline-block;
-  margin: 2.5% 0 2.5% 5%; }
-
-.li {
-  display: inline-block; }
-
-.bold-year {
-  font-weight: bold; }
 
 .compare-btn {
   border: none;
   background-color: #F38C73;
   padding: 4px 9px;
   border-radius: 3px;
-  margin-right: 5%;
-  margin-top: 2.5%;
+  margin-right: 12px;
   height: 10%;
   width: 15%;
   font-size: 90%;
   outline-color: #F38C73; }
 
 .compare-btn:hover {
-  background-color: #e64f40; }
+  background-color: #e64f40;
+  cursor: pointer; }
 
 .toggle-compare-btn {
   background-color: #f3f3f3; }
+
+.info-container {
+  display: flex;
+  flex-direction: column;
+  width: 83px;
+  text-align: center; }
+
+.list {
+  display: flex;
+  padding: 12px; }
+
+.data {
+  padding-bottom: 7px; }
+
+.year {
+  font-weight: bold; }

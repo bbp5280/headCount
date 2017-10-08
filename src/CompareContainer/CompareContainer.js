@@ -21,7 +21,7 @@ const CompareContainer = ({ compareArray, districts, comparisonData }) => {
   })
 
   return (
-    <div>
+    <div className="compare-card-conatiner">
       <CompareCard comparisonData={comparisonData} />
       {comparedDistricts}
     </div>
