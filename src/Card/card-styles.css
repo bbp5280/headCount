@@ -29,16 +29,16 @@
 
 .compare-btn {
   border: none;
-  background-color: #F38C73;
+  background-color: #e64f40;
   border-radius: 3px;
   margin-right: 12px;
   height: 10%;
   width: 15%;
   font-size: 90%;
-  outline-color: #F38C73; }
+  outline-color: #e64f40; }
 
 .compare-btn:hover {
-  background-color: #e64f40;
+  background-color: #F38C73;
   cursor: pointer; }
 
 .toggle-compare-btn {
@@ -59,3 +59,11 @@
 
 .year {
   font-weight: bold; }
+
+@media (max-width: 950px) {
+  .card {
+    width: 85%; } }
+
+@media (max-width: 650px) {
+  .card {
+    width: 90%; } }
