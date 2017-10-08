@@ -33,9 +33,11 @@ const CompareContainer = ({ compareArray, districts, comparisonData }) => {
   })
 
   return (
-    <div>
+    <div className="compare-card-conatiner">
+      <h2 className="comparison-header">Comparison</h2>
       <CompareCard comparisonData={comparisonData} getAvg={getAvg()}/>
       {comparedDistricts}
+      <hr />
     </div>
   )
 }

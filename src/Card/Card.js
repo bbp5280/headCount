@@ -23,22 +23,26 @@ const Card = ({ location, data, compare, forCompare }) => {
     if(forCompare === true){
       return(
       <div>
-        <h3 className="district">{location}</h3>
+        <div className="top-of-card">
+          <h3 className="district">{location}</h3>
+          <button className="compare-btn" onClick={click}>Remove
+          </button>
+        </div>
         <ul className="list">
           {year}
         </ul>
-        <button className="compare-btn" onClick={click}>Remove
-        </button>
       </div>)
   } else {
     return(
       <div>
-      <h3 className="district">{location}</h3>
+      <div className="top-of-card">
+        <h3 className="district">{location}</h3>
+        <button className="compare-btn" onClick={click}>Compare
+        </button>
+      </div>
       <ul className="list">
         {year}
       </ul>
-      <button className="compare-btn" onClick={click}>Click to Compair
-      </button>
     </div>
   )}
 
