@@ -37,6 +37,16 @@
   font-size: 90%;
   outline-color: #F38C73; }
 
+.compare-btn-off {
+  border: none;
+  background-color: #829595;
+  border-radius: 3px;
+  margin-right: 12px;
+  height: 10%;
+  width: 15%;
+  font-size: 90%;
+  outline-color: #829595; }
+
 .compare-btn:hover {
   background-color: #e64f40;
   cursor: pointer; }
