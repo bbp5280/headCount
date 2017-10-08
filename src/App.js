@@ -16,7 +16,7 @@ class App extends Component {
     this.state = {
       data: [],
       compareArray: [],
-      comparisonData: {}
+      comparisonData: {},
     };
 
     this.districts = new DistrictRepository(kinderData);
