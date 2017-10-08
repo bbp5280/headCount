@@ -7,11 +7,12 @@ import CompareContainer from './CompareContainer/CompareContainer';
 import Header from './Header/Header';
 import Footer from './Footer/Footer';
 import './index.css';
+import ScrollBtn from './ScrollBtn/ScrollBtn';
 
 class App extends Component {
 
   constructor() {
-    super()
+    super();
     this.state = {
       data: [],
       compareArray: [],
@@ -84,14 +85,14 @@ class App extends Component {
     const data = this.state;
 
     return (
-      <div>
+      <div className="parent">
         <Header />
         <Controls handleSearch={this.handleSearch} />
         {this.renderCompareContainer()}
 
-        <CardContainer {... data}
-          compare={this.compareDistricts}
-          toggleStateActive={this.toggleStateActive}     />
+        <CardContainer {... data} compare={this.compareDistricts}
+                                   />
+        <ScrollBtn />
         <Footer />
       </div>
     );
