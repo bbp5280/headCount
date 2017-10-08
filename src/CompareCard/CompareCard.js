@@ -3,7 +3,6 @@ import styles from '../index.css';
 import PropTypes from 'prop-types';
 
 const CompareCard = ({ comparisonData, getAvg }) => {
-console.log(getAvg);
   return (
     <div className="compare-card">
       <section className="district1">

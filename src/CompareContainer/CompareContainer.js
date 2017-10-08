@@ -6,7 +6,7 @@ import DistrictRepository from '../helper'
 import kinderData from './../../data/kindergartners_in_full_day_program.js';
 import PropTypes from 'prop-types';
 
-const CompareContainer = ({ compareArray, districts, comparisonData }) => {
+const CompareContainer = ({ compareArray, districts, comparisonData, removeCompare }) => {
 
   const getCard = () => {
     const district1 = districts.findByName(compareArray[0]);
@@ -29,13 +29,15 @@ const CompareContainer = ({ compareArray, districts, comparisonData }) => {
     return <Card location={district.location}
                  data={district.data}
                  key={district.location}
-                forCompare={district.forCompare}/>
+                forCompare={district.forCompare}
+                removeCompare={removeCompare}/>
   })
 
   return (
     <div className="compare-card-conatiner">
       <h2 className="comparison-header">Comparison</h2>
-      <CompareCard comparisonData={comparisonData} getAvg={getAvg()}/>
+      <CompareCard comparisonData={comparisonData}
+                   getAvg={getAvg()}/>
       {comparedDistricts}
       <hr />
     </div>

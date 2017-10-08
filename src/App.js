@@ -21,6 +21,7 @@ class App extends Component {
     this.districts = new DistrictRepository(kinderData);
     this.handleSearch = this.handleSearch.bind(this);
     this.compareDistricts = this.compareDistricts.bind(this);
+    this.removeCompare = this.removeCompare.bind(this);
   }
 
   componentDidMount() {
@@ -63,12 +64,19 @@ class App extends Component {
     this.setState({ comparisonData: comparison });
   }
 
+  removeCompare(districtFind){
+    const districtsNotToRemove = this.state.compareArray.filter(district => {
+      district !== districtFind})
+    this.setState({ compareArray: districtsNotToRemove })
+  }
+
 
   renderCompareContainer() {
       if (this.state.compareArray.length === 2) {
         return <CompareContainer compareArray={this.state.compareArray}
                                  districts={this.districts}
-                                 comparisonData={this.state.comparisonData}/>
+                                 comparisonData={this.state.comparisonData}
+                                 removeCompare={this.removeCompare}/>
       }
   }
 
