@@ -2,7 +2,7 @@ import React from 'react';
 import styles from '../index.css';
 import PropTypes from 'prop-types';
 
-const Card = ({ location, data, compare, forCompare }) => {
+const Card = ({ location, data, compare, forCompare, removeCompare }) => {
   const yearArray = Object.keys(data);
 
   const mappedYears = yearArray.map(year => {
@@ -18,6 +18,10 @@ const Card = ({ location, data, compare, forCompare }) => {
     compare(location);
   }
 
+  const removeClick = ()=>{
+    removeCompare(location)
+  }
+
   const buildCards = (year, click) => {
 
     if(forCompare === true){
@@ -25,7 +29,7 @@ const Card = ({ location, data, compare, forCompare }) => {
       <div>
         <div className="top-of-card">
           <h3 className="district">{location}</h3>
-          <button className="compare-btn" onClick={click}>Remove
+          <button className="compare-btn" onClick={removeClick}>Remove
           </button>
         </div>
         <ul className="list">
