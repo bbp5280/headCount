@@ -6,8 +6,12 @@ const Card = ({ location, data, compare, forCompare }) => {
   const yearArray = Object.keys(data);
 
   const mappedYears = yearArray.map(year => {
-    return <li key={year}><span className="bold-year">{year}:</span>{data[year]}</li>
-
+    return (
+      <div className="info-container" key={year}>
+        <span className="data">{data[year]}</span>
+        <span className="year">{year}</span>
+      </div>
+    )
   });
 
   const clickHandler = () => {
@@ -19,22 +23,26 @@ const Card = ({ location, data, compare, forCompare }) => {
     if(forCompare === true){
       return(
       <div>
-        <h3 className="district">{location}</h3>
+        <div className="top-of-card">
+          <h3 className="district">{location}</h3>
+          <button className="compare-btn" onClick={click}>Remove
+          </button>
+        </div>
         <ul className="list">
           {year}
         </ul>
-        <button className="compare-btn" onClick={click}>Remove
-        </button>
       </div>)
   } else {
     return(
       <div>
-      <h3 className="district">{location}</h3>
+      <div className="top-of-card">
+        <h3 className="district">{location}</h3>
+        <button className="compare-btn" onClick={click}>Compare
+        </button>
+      </div>
       <ul className="list">
         {year}
       </ul>
-      <button className="compare-btn" onClick={click}>Click to Compair
-      </button>
     </div>
   )}
 

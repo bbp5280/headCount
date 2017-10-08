@@ -4,6 +4,7 @@
 @import url(./Controls/controls-styles.css);
 @import url(./Header/header-styles.css);
 @import url(./Footer/footer-styles.css);
+@import url(./CompareCard/compare-card-styles.css);
 * {
   margin: 0;
   padding: 0;
