@@ -1,13 +1,13 @@
 import React from 'react';
-import CardContainer from './CardContainer';
+import List from './List';
 import { shallow, mount } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-15';
 import config from '../../test/setup.js';
 
-describe('CARD CONTAINER', () => {
-  let wrapper = shallow(<CardContainer />);
+describe('LIST', () => {
+  let wrapper = shallow(<List />);
 
-  it('should..., () => {
+  it('should ...', () => {
 
   });
 
