@@ -47,7 +47,7 @@ const CompareContainer = ({ compareArray, districts, comparisonData, removeCompa
   );
 };
 
-Card.propTypes = {
+CompareContainer.propTypes = {
   compareArray: PropTypes.array,
   districts: PropTypes.object,
   comparisonData: PropTypes.object,

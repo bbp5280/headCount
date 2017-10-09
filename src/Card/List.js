@@ -35,5 +35,8 @@ const List = ({ data }) => {
   );
 };
 
+List.propTypes = {
+  data: PropTypes.object
+};
 
 export default List;

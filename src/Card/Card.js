@@ -83,7 +83,6 @@ Card.propTypes = {
   location: PropTypes.string.isRequired,
   allData: PropTypes.objectOf(PropTypes.number).isRequired,
   compare: PropTypes.func.isRequired,
-  removeCompare: PropTypes.func.isRequired,
   forCompare: PropTypes.func
 };
 
