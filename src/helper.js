@@ -13,7 +13,7 @@ export default class DistrictRepository {
       if (!acc[district]) {
         acc[district] = {
           location: district,
-          data: {}
+          data: {},
         };
       }
 

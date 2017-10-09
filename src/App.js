@@ -63,7 +63,8 @@ class App extends Component {
   }
 
   getData(compareArray) {
-    const comparison = this.districts.compareDistrictAverages(compareArray[0], compareArray[1]);
+    const comparison =
+    this.districts.compareDistrictAverages(compareArray[0], compareArray[1]);
     this.setState({
       comparisonData: comparison
     });
@@ -99,7 +100,8 @@ class App extends Component {
         {this.renderCompareContainer()}
         <CardContainer {... allData}
           compare={this.compareDistricts}
-          toggleStateActive={this.toggleStateActive} />
+          compareArray={this.state.compareArray}
+        />
         <ScrollBtn
           scrollStepInPx="50"
           delayInMs="10" />
