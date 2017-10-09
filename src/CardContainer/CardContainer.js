@@ -3,13 +3,15 @@ import Card from '../Card/Card';
 import styles from '../index.css';
 import PropTypes from 'prop-types';
 
-const CardContainer = ({ allData, compare, toggleStateActive }) => {
+const CardContainer = ({ allData, compare, toggleStateFun, }) => {
   const cards = allData.map(district => {
     return <Card
       location={district.location}
       allData={district.data}
       key={district.location}
-      compare={compare} />;
+      compare={compare}
+      toggleStateFun={toggleStateFun}
+      toggle={district.toggle}/>;
   });
 
   return (

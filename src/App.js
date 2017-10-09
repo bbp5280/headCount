@@ -15,13 +15,15 @@ class App extends Component {
     this.state = {
       allData: [],
       compareArray: [],
-      comparisonData: {}
+      comparisonData: {},
+      toggleState: false
     };
 
     this.districts = new DistrictRepository(kinderData);
     this.handleSearch = this.handleSearch.bind(this);
     this.compareDistricts = this.compareDistricts.bind(this);
     this.removeCompare = this.removeCompare.bind(this);
+    this.toggleStateFun = this.toggleStateFun.bind(this);
   }
 
   componentDidMount() {
@@ -63,7 +65,8 @@ class App extends Component {
   }
 
   getData(compareArray) {
-    const comparison = this.districts.compareDistrictAverages(compareArray[0], compareArray[1]);
+    const comparison =
+    this.districts.compareDistrictAverages(compareArray[0], compareArray[1]);
     this.setState({
       comparisonData: comparison
     });
@@ -89,6 +92,12 @@ class App extends Component {
     }
   }
 
+  toggleStateFun(){
+    this.setState({
+      toggleState: !this.toggleState
+    });
+  }
+
   render() {
     const allData = this.state;
 
@@ -97,9 +106,12 @@ class App extends Component {
         <Header />
         <Controls handleSearch={this.handleSearch} />
         {this.renderCompareContainer()}
+        {console.log(allData)}
         <CardContainer {... allData}
           compare={this.compareDistricts}
-          toggleStateActive={this.toggleStateActive} />
+          toggleStateFun={this.toggleStateFun}
+          toggleState={this.state.toggleState}
+        />
         <ScrollBtn
           scrollStepInPx="50"
           delayInMs="10" />

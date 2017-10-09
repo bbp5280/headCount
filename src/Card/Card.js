@@ -3,11 +3,15 @@ import styles from '../index.css';
 import PropTypes from 'prop-types';
 import List from './List'
 
-const Card = ({ location, allData, compare, forCompare, removeCompare }) => {
+const Card = ({ location, allData, compare, forCompare, removeCompare, toggleStateFun, toggle }) => {
   const yearArray = Object.keys(allData);
 
   const clickHandler = () => {
+    console.log(toggle);
+    toggle = true;
+    console.log(toggle);
     compare(location);
+    toggleStateFun();
   };
 
   const removeClick = ()=>{
@@ -33,7 +37,8 @@ const Card = ({ location, allData, compare, forCompare, removeCompare }) => {
         <div>
           <div className="top-of-card">
             <h3 className="district">{location}</h3>
-            <button className="compare-btn" onClick={clickHandler}>Compare
+            {console.log(toggle)}
+            <button className={toggle ? "compare-btn-off" : "compare-btn"} onClick={clickHandler}>Compare
             </button>
           </div>
           <ul className="list">
