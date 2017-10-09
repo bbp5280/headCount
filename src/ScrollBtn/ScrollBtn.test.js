@@ -17,4 +17,6 @@ describe('SCROLL BUTTON', () => {
     expect(scrollBtn.state('intervalID')).toEqual(0);
   });
 
+
+
 });

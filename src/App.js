@@ -97,7 +97,6 @@ class App extends Component {
         <Header />
         <Controls handleSearch={this.handleSearch} />
         {this.renderCompareContainer()}
-
         <CardContainer {... allData}
           compare={this.compareDistricts}
           toggleStateActive={this.toggleStateActive} />

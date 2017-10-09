@@ -14,4 +14,9 @@ describe('HEADER', () => {
     expect(header.length).toEqual(1);
   });
 
+  it('should match the Header snapshot', () => {
+
+    expect(wrapper).toMatchSnapshot();
+  });
+
 });
