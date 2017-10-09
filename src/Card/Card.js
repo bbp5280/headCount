@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styles from '../index.css';
 import PropTypes from 'prop-types';
-import List from './List'
+import List from './List';
 
 class Card extends Component{
 
@@ -39,7 +39,7 @@ class Card extends Component{
   }
 
   buildCards(props) {
-    if (this.props.forCompare === true){
+    if (this.props.forCompare === true) {
       return (
         <div className="card-grouping">
           <div className="top-of-card">
@@ -50,9 +50,9 @@ class Card extends Component{
           <div className="list">
             <List data={this.props.data}/>
           </div>
-        </div>)
+        </div>
+      );
     } else {
-
       return (
         <div className="card-grouping">
           <div className="top-of-card">
@@ -65,13 +65,13 @@ class Card extends Component{
             <List data={this.props.data} />
           </div>
         </div>
-      )}
+      );
+    }
 
   }
 
   render(){
     return (
-
       <div className="card">
         {this.buildCards()}
       </div>
@@ -82,7 +82,8 @@ class Card extends Component{
 Card.propTypes = {
   location: PropTypes.string.isRequired,
   data: PropTypes.objectOf(PropTypes.number).isRequired,
-  compare: PropTypes.func.isRequired
+  compare: PropTypes.func.isRequired,
+  removeCompare: PropTypes.func.isRequired
 };
 
 export default Card;
