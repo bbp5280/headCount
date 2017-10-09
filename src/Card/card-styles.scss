@@ -41,6 +41,9 @@
   width: 15%;
   font-size: 90%;
   outline-color: #e64f40;
+  color: #fff;
+  text-transform: uppercase;
+  padding: 4px;
 }
 
 .compare-btn-off {
@@ -52,6 +55,9 @@
   width: 15%;
   font-size: 90%;
   outline-color: #829595;
+  color: #fff;
+  text-transform: uppercase;
+  padding: 4px;
 }
 
 .compare-btn:hover {
@@ -63,20 +69,28 @@
   background-color: #f3f3f3;
 }
 
+.list {
+  display: flex;
+  flex-direction: row;
+  padding: 12px;
+}
+
+.list div {
+  display: flex;
+  flex-direction: row;
+}
+
 .info-container {
+  //display: inline-block;
   display: flex;
   flex-direction: column;
   width: 83px;
   text-align: center;
 }
 
-.list {
-  display: flex;
-  padding: 12px;
-}
-
 .data {
   padding-bottom: 7px;
+  color: #AC3B30;
 }
 
 .year {

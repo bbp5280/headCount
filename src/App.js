@@ -5,7 +5,6 @@ import kinderData from './../data/kindergartners_in_full_day_program.js';
 import Controls from './Controls/Controls';
 import CompareContainer from './CompareContainer/CompareContainer';
 import Header from './Header/Header';
-import Footer from './Footer/Footer';
 import './index.css';
 import ScrollBtn from './ScrollBtn/ScrollBtn';
 
@@ -14,9 +13,9 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      data: [],
+      allData: [],
       compareArray: [],
-      comparisonData: {},
+      comparisonData: {}
     };
 
     this.districts = new DistrictRepository(kinderData);
@@ -27,62 +26,71 @@ class App extends Component {
 
   componentDidMount() {
     this.setState({
-      data: this.districts.findAllMatches()
+      allData: this.districts.findAllMatches()
     });
   }
 
   handleSearch(event) {
-    const inputValue = event.target.value
-    const updatedValue = this.districts.findAllMatches(inputValue)
+    const inputValue = event.target.value;
+    const updatedValue = this.districts.findAllMatches(inputValue);
     this.setState({
-      data: updatedValue
+      allData: updatedValue
     });
   }
 
   compareDistricts(district) {
     if (this.state.compareArray.length === 0) {
       const updatedCompareArray = [...this.state.compareArray, district];
-      this.setState({compareArray: updatedCompareArray});
+      this.setState({
+        compareArray: updatedCompareArray
+      });
     }
 
     if (this.state.compareArray.length === 1) {
       const updatedCompareArray = [...this.state.compareArray, district];
-      this.setState({compareArray: updatedCompareArray}, () => this.getData(this.state.compareArray));
-      ;
+      this.setState({
+        compareArray: updatedCompareArray
+      }, () => this.getData(this.state.compareArray));
     }
 
     if (this.state.compareArray.length === 2) {
       const updatedCompareArray = [district];
-      this.setState({compareArray: updatedCompareArray});
+      this.setState({
+        compareArray: updatedCompareArray
+      });
     }
 
   }
 
   getData(compareArray) {
-    console.log(compareArray );
     const comparison = this.districts.compareDistrictAverages(compareArray[0], compareArray[1]);
-    console.log(comparison);
-    this.setState({ comparisonData: comparison });
+    this.setState({
+      comparisonData: comparison
+    });
   }
 
   removeCompare(districtFind){
     const districtsNotToRemove = this.state.compareArray.filter(district => {
-      district !== districtFind})
-    this.setState({ compareArray: districtsNotToRemove })
+      district !== districtFind;
+    });
+    this.setState({
+      compareArray: districtsNotToRemove
+    });
   }
 
 
   renderCompareContainer() {
-      if (this.state.compareArray.length === 2) {
-        return <CompareContainer compareArray={this.state.compareArray}
-                                 districts={this.districts}
-                                 comparisonData={this.state.comparisonData}
-                                 removeCompare={this.removeCompare}/>
-      }
+    if (this.state.compareArray.length === 2) {
+      return <CompareContainer
+        compareArray={this.state.compareArray}
+        districts={this.districts}
+        comparisonData={this.state.comparisonData}
+        removeCompare={this.removeCompare} />;
+    }
   }
 
   render() {
-    const data = this.state;
+    const allData = this.state;
 
     return (
       <div className="parent">
@@ -90,9 +98,12 @@ class App extends Component {
         <Controls handleSearch={this.handleSearch} />
         {this.renderCompareContainer()}
 
-        <CardContainer {... data}
+        <CardContainer {... allData}
           compare={this.compareDistricts}
-          toggleStateActive={this.toggleStateActive}     />        <Footer />
+          toggleStateActive={this.toggleStateActive} />
+        <ScrollBtn
+          scrollStepInPx="50"
+          delayInMs="10" />
       </div>
     );
   }

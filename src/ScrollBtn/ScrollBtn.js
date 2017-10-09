@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import arrowIcon from '../../assets/scroll-up-arrow.svg';
 
 class ScrollBtn extends Component {
@@ -12,7 +13,7 @@ class ScrollBtn extends Component {
 
   scrollStep() {
     if (window.pageYOffset === 0) {
-        clearInterval(this.state.intervalId);
+      clearInterval(this.state.intervalId);
     }
     window.scroll(0, window.pageYOffset - this.props.scrollStepInPx);
   }
@@ -25,11 +26,16 @@ class ScrollBtn extends Component {
   render() {
     return (
       <button className="scroll-top" onClick={this.scrollToTop}>
-          <img src={arrowIcon} />
+        <img className="arrow" src={arrowIcon} />
       </button>
-    )
+    );
   }
 
 }
+
+ScrollBtn.propTypes = {
+  delayInMs: PropTypes.string,
+  scrollStepInPx: PropTypes.string
+};
 
 export default ScrollBtn;

@@ -6,31 +6,32 @@ export default class DistrictRepository {
     this.reduceData = this.reduceData.bind(this);
   }
 
-  reduceData(data) {
-    return data.reduce( (acc, obj) => {
-      const district = obj.Location.toUpperCase();
+  reduceData(dataToReduce) {
+    return dataToReduce.reduce( (acc, dataObj) => {
+      const district = dataObj.Location.toUpperCase();
 
       if (!acc[district]) {
         acc[district] = {
           location: district,
           data: {}
-        }};
+        };
+      }
 
-      const year = [obj.TimeFrame];
-      let percent = Math.round([obj.Data * 1000]) / 1000;
+      const year = [dataObj.TimeFrame];
+      let percent = Math.round([dataObj.Data * 1000]) / 1000;
 
-      if (isNaN(obj.Data)) {
+      if (isNaN(dataObj.Data)) {
         percent = 0;
       }
 
       Object.assign(acc[district].data, {[year] : percent});
 
       return acc;
-    }, {})}
-
+    }, {});
+  }
 
   findByName(search) {
-    if(!search) {
+    if (!search) {
       return undefined;
     }
 
@@ -39,33 +40,29 @@ export default class DistrictRepository {
       search.toUpperCase() === district.toUpperCase());
 
     return this.data[searchResult];
-
-    if(!searchResult) {
-      return undefined;
-    }
   }
 
   findAllMatches(search) {
     const keysArray = Object.keys(this.data);
     let dataArray =[];
 
-    if(!search) {
-        keysArray.forEach(district => {
+    if (!search) {
+      keysArray.forEach(district => {
         dataArray.push(this.data[district]);
-    })
+      });
       return dataArray;
     }
 
     const searchResult = keysArray.filter(district => {
       search = search.toUpperCase();
       return district.startsWith(search);
-      })
+    });
 
-      searchResult.forEach( result => {
-        dataArray.push(this.data[result]);
-      })
+    searchResult.forEach( result => {
+      dataArray.push(this.data[result]);
+    });
 
-      return dataArray;
+    return dataArray;
   }
 
   findAverage(district) {
@@ -93,9 +90,10 @@ export default class DistrictRepository {
 
     diff = Math.round(diff * 1000) / 1000;
 
-    return { [district1.toUpperCase()]: district1Average,
-             [district2.toUpperCase()]: district2Average,
-              compared: diff }
-    }
+    return {
+      [district1.toUpperCase()]: district1Average,
+      [district2.toUpperCase()]: district2Average,
+      compared: diff };
+  }
 
 }
