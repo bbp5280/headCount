@@ -5,7 +5,7 @@ import searchIcon from '../../assets/search-icon.svg';
 
 const Controls = ({handleSearch}) =>{
   return (
-    <div>
+    <div className='controls'>
       <input
         type='text'
         placeholder='Search by District'

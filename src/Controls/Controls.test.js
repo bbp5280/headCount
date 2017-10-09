@@ -1,15 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
 import Controls from './Controls';
 import { shallow, mount } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-15';
-import config from '../test/setup.js';
+import config from '../../test/setup.js';
 
 describe('CONTROLS', () => {
+  let wrapper = shallow(<Controls />);
 
-  it('', () => {
+  it('should have a search container', () => {
+    let searchContainer = wrapper.find('.controls');
 
+    expect(searchContainer.length).toEqual(1);
+  });
+
+  it('should have an input', () => {
+    let input = wrapper.find('input');
+
+    expect(input.length).toEqual(1);
   });
 
 });
