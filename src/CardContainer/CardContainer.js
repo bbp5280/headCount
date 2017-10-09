@@ -15,7 +15,8 @@ const CardContainer = ({ allData, compare, toggleStateActive }) => {
 
   return (
     <div className="card-container">
-      <h2 className="data-info">Percent of Students in Enrolled in Full Day Kinder</h2>
+      <h2 className="data-info">
+        Percent of Students in Enrolled in Full Day Kinder</h2>
       {cards}
     </div>
   );
