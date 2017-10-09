@@ -64,18 +64,20 @@ class App extends Component {
 
   removeCompare(districtFind){
     const districtsNotToRemove = this.state.compareArray.filter(district => {
-      district !== districtFind })
-    this.setState({ compareArray: districtsNotToRemove })
+      district !== districtFind;
+    });
+    this.setState({ compareArray: districtsNotToRemove });
   }
 
 
   renderCompareContainer() {
-      if (this.state.compareArray.length === 2) {
-        return <CompareContainer compareArray={this.state.compareArray}
-                                 districts={this.districts}
-                                 comparisonData={this.state.comparisonData}
-                                 removeCompare={this.removeCompare}/>
-      }
+    if (this.state.compareArray.length === 2) {
+      return <CompareContainer
+        compareArray={this.state.compareArray}
+        districts={this.districts}
+        comparisonData={this.state.comparisonData}
+        removeCompare={this.removeCompare} />;
+    }
   }
 
   render() {
@@ -89,8 +91,8 @@ class App extends Component {
 
         <CardContainer {... data}
           compare={this.compareDistricts}
-          toggleStateActive={this.toggleStateActive}     />
-          <ScrollBtn />
+          toggleStateActive={this.toggleStateActive} />
+        <ScrollBtn />
         <Footer />
       </div>
     );
