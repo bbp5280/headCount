@@ -8,7 +8,7 @@ const Header = () => {
       <img src={icon} />
       <h1>HeadCount</h1>
     </nav>
-  )
-}
+  );
+};
 
 export default Header;

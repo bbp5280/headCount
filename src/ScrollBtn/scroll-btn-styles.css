@@ -8,7 +8,9 @@
   width: 40px;
   position: fixed;
   bottom: 0;
-  right: 0; }
+  right: 0;
+  border: none;
+  background: none; }
 
 @media (max-width: 950px) {
   img {

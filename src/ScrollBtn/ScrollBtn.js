@@ -12,7 +12,7 @@ class ScrollBtn extends Component {
 
   scrollStep() {
     if (window.pageYOffset === 0) {
-        clearInterval(this.state.intervalId);
+      clearInterval(this.state.intervalId);
     }
     window.scroll(0, window.pageYOffset - this.props.scrollStepInPx);
   }
@@ -25,7 +25,7 @@ class ScrollBtn extends Component {
   render() {
     return (
       <button className="scroll-top" onClick={this.scrollToTop}>
-          <img className="arrow" src={arrowIcon} />
+        <img className="arrow" src={arrowIcon} />
       </button>
     )
   }

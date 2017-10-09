@@ -5,7 +5,6 @@ import kinderData from './../data/kindergartners_in_full_day_program.js';
 import Controls from './Controls/Controls';
 import CompareContainer from './CompareContainer/CompareContainer';
 import Header from './Header/Header';
-import Footer from './Footer/Footer';
 import './index.css';
 import ScrollBtn from './ScrollBtn/ScrollBtn';
 
@@ -92,8 +91,7 @@ class App extends Component {
         <CardContainer {... data}
           compare={this.compareDistricts}
           toggleStateActive={this.toggleStateActive} />
-        <ScrollBtn />
-        <Footer />
+        <ScrollBtn scrollStepInPx="50" delayInMs="16.66" />
       </div>
     );
   }
