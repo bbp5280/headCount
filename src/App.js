@@ -103,7 +103,7 @@ class App extends Component {
           toggleStateActive={this.toggleStateActive} />
         <ScrollBtn
           scrollStepInPx="50"
-          delayInMs="16.66" />
+          delayInMs="10" />
       </div>
     );
   }
