@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Card from '../Card/Card';
 import CompareCard from '../CompareCard/CompareCard';
 import styles from '../index.css';
@@ -50,7 +50,8 @@ const CompareContainer = ({ compareArray, districts, comparisonData, removeCompa
 Card.propTypes = {
   compareArray: PropTypes.array,
   districts: PropTypes.object,
-  comparisonData: PropTypes.object
+  comparisonData: PropTypes.object,
+  removeCompare: PropTypes.func
 };
 
 export default CompareContainer;

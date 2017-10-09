@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import searchIcon from '../../assets/search-icon.svg';
 
 const Controls = ({handleSearch}) =>{
-return (
+  return (
     <div>
       <input
         type='text'

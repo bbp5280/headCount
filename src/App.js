@@ -13,7 +13,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      data: [],
+      allData: [],
       compareArray: [],
       comparisonData: {}
     };
@@ -26,7 +26,7 @@ class App extends Component {
 
   componentDidMount() {
     this.setState({
-      data: this.districts.findAllMatches()
+      allData: this.districts.findAllMatches()
     });
   }
 
@@ -34,38 +34,48 @@ class App extends Component {
     const inputValue = event.target.value;
     const updatedValue = this.districts.findAllMatches(inputValue);
     this.setState({
-      data: updatedValue
+      allData: updatedValue
     });
   }
 
   compareDistricts(district) {
     if (this.state.compareArray.length === 0) {
       const updatedCompareArray = [...this.state.compareArray, district];
-      this.setState({compareArray: updatedCompareArray});
+      this.setState({
+        compareArray: updatedCompareArray
+      });
     }
 
     if (this.state.compareArray.length === 1) {
       const updatedCompareArray = [...this.state.compareArray, district];
-      this.setState({compareArray: updatedCompareArray}, () => this.getData(this.state.compareArray));
+      this.setState({
+        compareArray: updatedCompareArray
+      }, () => this.getData(this.state.compareArray));
     }
 
     if (this.state.compareArray.length === 2) {
       const updatedCompareArray = [district];
-      this.setState({compareArray: updatedCompareArray});
+      this.setState({
+        compareArray: updatedCompareArray
+      });
     }
 
   }
 
   getData(compareArray) {
     const comparison = this.districts.compareDistrictAverages(compareArray[0], compareArray[1]);
-    this.setState({ comparisonData: comparison });
+    this.setState({
+      comparisonData: comparison
+    });
   }
 
   removeCompare(districtFind){
     const districtsNotToRemove = this.state.compareArray.filter(district => {
       district !== districtFind;
     });
-    this.setState({ compareArray: districtsNotToRemove });
+    this.setState({
+      compareArray: districtsNotToRemove
+    });
   }
 
 
@@ -80,7 +90,7 @@ class App extends Component {
   }
 
   render() {
-    const data = this.state;
+    const allData = this.state;
 
     return (
       <div className="parent">
@@ -88,7 +98,7 @@ class App extends Component {
         <Controls handleSearch={this.handleSearch} />
         {this.renderCompareContainer()}
 
-        <CardContainer {... data}
+        <CardContainer {... allData}
           compare={this.compareDistricts}
           toggleStateActive={this.toggleStateActive} />
         <ScrollBtn scrollStepInPx="50" delayInMs="16.66" />
