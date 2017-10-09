@@ -101,7 +101,9 @@ class App extends Component {
         <CardContainer {... allData}
           compare={this.compareDistricts}
           toggleStateActive={this.toggleStateActive} />
-        <ScrollBtn scrollStepInPx="50" delayInMs="16.66" />
+        <ScrollBtn
+          scrollStepInPx="50"
+          delayInMs="16.66" />
       </div>
     );
   }

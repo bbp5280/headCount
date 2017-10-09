@@ -29,7 +29,7 @@ const CompareContainer = ({ compareArray, districts, comparisonData, removeCompa
     district['forCompare'] = true;
     return <Card
       location={district.location}
-      data={district.data}
+      allData={district.data}
       key={district.location}
       forCompare={district.forCompare}
       removeCompare={removeCompare} />;

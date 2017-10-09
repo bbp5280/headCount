@@ -7,7 +7,7 @@ const CardContainer = ({ allData, compare, toggleStateActive }) => {
   const cards = allData.map(district => {
     return <Card
       location={district.location}
-      data={district.data}
+      allData={district.data}
       key={district.location}
       compare={compare}
       toggleStateActive={toggleStateActive} />;
@@ -21,9 +21,10 @@ const CardContainer = ({ allData, compare, toggleStateActive }) => {
   );
 };
 
-Card.propTypes = {
-  allData: PropTypes.object.isRequired,
-  compare: PropTypes.func.isRequired
+CardContainer.propTypes = {
+  allData: PropTypes.array.isRequired,
+  compare: PropTypes.func.isRequired,
+  toggleStateActive: PropTypes.func
 };
 
 export default CardContainer;

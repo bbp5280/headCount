@@ -38,7 +38,7 @@ class Card extends Component{
     this.toggleStateInactive();
   }
 
-  buildCards(props) {
+  buildCards() {
     if (this.props.forCompare === true) {
       return (
         <div className="card-grouping">
@@ -48,7 +48,7 @@ class Card extends Component{
             </button>
           </div>
           <div className="list">
-            <List data={this.props.data}/>
+            <List data={this.props.allData}/>
           </div>
         </div>
       );
@@ -62,7 +62,7 @@ class Card extends Component{
             </button>
           </div>
           <div className="list">
-            <List data={this.props.data} />
+            <List data={this.props.allData} />
           </div>
         </div>
       );
@@ -81,9 +81,10 @@ class Card extends Component{
 
 Card.propTypes = {
   location: PropTypes.string.isRequired,
-  data: PropTypes.objectOf(PropTypes.number).isRequired,
+  allData: PropTypes.objectOf(PropTypes.number).isRequired,
   compare: PropTypes.func.isRequired,
-  removeCompare: PropTypes.func.isRequired
+  removeCompare: PropTypes.func.isRequired,
+  forCompare: PropTypes.func
 };
 
 export default Card;
