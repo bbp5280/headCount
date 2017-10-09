@@ -1,18 +1,19 @@
 import React from 'react';
 import styles from '../index.css';
 import PropTypes from 'prop-types';
+import List from './List'
 
 const Card = ({ location, allData, compare, forCompare, removeCompare }) => {
   const yearArray = Object.keys(allData);
 
-  const mappedYears = yearArray.map(year => {
-    return (
-      <div className="info-container" key={year}>
-        <span className="data">{allData[year]}</span>
-        <span className="year">{year}</span>
-      </div>
-    );
-  });
+  // const mappedYears = yearArray.map(year => {
+  //   return (
+  //     <div className="info-container" key={year}>
+  //       <span className="data">{allData[year]}</span>
+  //       <span className="year">{year}</span>
+  //     </div>
+  //   );
+  // });
 
   const clickHandler = () => {
     compare(location);
@@ -22,7 +23,7 @@ const Card = ({ location, allData, compare, forCompare, removeCompare }) => {
     removeCompare(location);
   };
 
-  const buildCards = (year, click) => {
+  const buildCards = () => {
 
     if (forCompare === true){
       return (
@@ -33,7 +34,7 @@ const Card = ({ location, allData, compare, forCompare, removeCompare }) => {
             </button>
           </div>
           <ul className="list">
-            {year}
+            <List data={allData} />
           </ul>
         </div>);
     } else {
@@ -41,11 +42,11 @@ const Card = ({ location, allData, compare, forCompare, removeCompare }) => {
         <div>
           <div className="top-of-card">
             <h3 className="district">{location}</h3>
-            <button className="compare-btn" onClick={click}>Compare
+            <button className="compare-btn" onClick={clickHandler}>Compare
             </button>
           </div>
           <ul className="list">
-            {year}
+            <List data ={allData}/>
           </ul>
         </div>
       );
@@ -56,7 +57,7 @@ const Card = ({ location, allData, compare, forCompare, removeCompare }) => {
   return (
 
     <div className="card">
-      {buildCards(mappedYears, clickHandler)}
+      {buildCards()}
     </div>
   );
 
