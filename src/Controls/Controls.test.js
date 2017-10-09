@@ -8,13 +8,13 @@ import config from '../../test/setup.js';
 describe('CONTROLS', () => {
   let wrapper = shallow(<Controls />);
 
-  it('should have a search container', () => {
+  it('should have a controls container', () => {
     let searchContainer = wrapper.find('.controls');
 
     expect(searchContainer.length).toEqual(1);
   });
 
-  it('should have an input', () => {
+  it('should have an input field', () => {
     let input = wrapper.find('input');
 
     expect(input.length).toEqual(1);

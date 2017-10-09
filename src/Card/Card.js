@@ -82,8 +82,8 @@ class Card extends Component{
 Card.propTypes = {
   location: PropTypes.string.isRequired,
   allData: PropTypes.objectOf(PropTypes.number).isRequired,
-  compare: PropTypes.func.isRequired,
-  forCompare: PropTypes.func
+  forCompare: PropTypes.func,
+  compare: PropTypes.func
 };
 
 export default Card;

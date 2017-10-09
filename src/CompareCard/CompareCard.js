@@ -19,8 +19,8 @@ const CompareCard = ({ comparisonData, getAvg }) => {
 };
 
 CompareCard.propTypes = {
-  comparisonData: PropTypes.object.isRequired,
-  getAvg: PropTypes.object.isRequired
+  comparisonData: PropTypes.object,
+  getAvg: PropTypes.object
 };
 
 export default CompareCard;

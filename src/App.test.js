@@ -8,8 +8,6 @@ import config from '../test/setup.js';
 describe('APP', () => {
 
   it('renders without crashing', () => {
-    // const div = document.createElement('div');
-    // ReactDOM.render(<App />, div);
     const newApp = shallow(<App />);
 
     expect(newApp.hasClass('parent')).toEqual(true);
