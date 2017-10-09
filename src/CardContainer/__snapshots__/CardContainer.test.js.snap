@@ -1,0 +1,130 @@
+exports[`CARD CONTAINER should match the CardContainer snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <CardContainer
+    allData={
+        Array [
+            Object {
+              "2004": 0.24,
+            },
+          ]
+    }
+    compare={[Function]}
+    location="COLORADO" />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": null,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <h2
+          className="data-info">
+          Percent of Students in Enrolled in Full Day Kinder
+</h2>,
+        Array [
+          <Card
+            allData={undefined}
+            compare={[Function]}
+            location={undefined} />,
+        ],
+      ],
+      "className": "card-container",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": null,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Percent of Students in Enrolled in Full Day Kinder",
+          "className": "data-info",
+        },
+        "ref": null,
+        "rendered": "Percent of Students in Enrolled in Full Day Kinder",
+        "type": "h2",
+      },
+      Object {
+        "instance": null,
+        "key": null,
+        "nodeType": "function",
+        "props": Object {
+          "allData": undefined,
+          "compare": [Function],
+          "location": undefined,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": null,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <h2
+            className="data-info">
+            Percent of Students in Enrolled in Full Day Kinder
+</h2>,
+          Array [
+            <Card
+              allData={undefined}
+              compare={[Function]}
+              location={undefined} />,
+          ],
+        ],
+        "className": "card-container",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Percent of Students in Enrolled in Full Day Kinder",
+            "className": "data-info",
+          },
+          "ref": null,
+          "rendered": "Percent of Students in Enrolled in Full Day Kinder",
+          "type": "h2",
+        },
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "function",
+          "props": Object {
+            "allData": undefined,
+            "compare": [Function],
+            "location": undefined,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactFifteenAdapter {
+      "options": Object {
+        "supportPrevContextArgumentOfComponentDidUpdate": true,
+      },
+    },
+  },
+}
+`;

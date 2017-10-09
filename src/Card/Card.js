@@ -1,89 +1,65 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styles from '../index.css';
 import PropTypes from 'prop-types';
-import List from './List';
+import List from './List'
 
-class Card extends Component{
+const Card = ({ location, allData, compare, forCompare, removeCompare }) => {
+  const yearArray = Object.keys(allData);
 
-  constructor(){
-    super();
-    this.state = {
-      toggleStateActive: false
-    };
+  const clickHandler = () => {
+    compare(location);
+  };
 
-    this.clickHandler = this.clickHandler.bind(this);
-    this.removeClick = this.removeClick.bind(this);
-    this.buildCards = this.buildCards.bind(this);
-  }
+  const removeClick = ()=>{
+    removeCompare(location);
+  };
 
-  toggleStateActive(){
-    this.setState({
-      toggleStateActive: true
-    });
-  }
+  const buildCards = () => {
 
-  toggleStateInactive(){
-    this.setState({
-      toggleStateActive: false
-    });
-  }
-
-  clickHandler() {
-    this.props.compare(this.props.location);
-    this.toggleStateActive();
-  }
-
-  removeClick() {
-    this.props.removeCompare(this.props.location);
-    this.toggleStateInactive();
-  }
-
-  buildCards() {
-    if (this.props.forCompare === true) {
+    if (forCompare === true){
       return (
-        <div className="card-grouping">
+        <div>
           <div className="top-of-card">
-            <h3 className="district">{this.props.location}</h3>
-            <button className="compare-btn" onClick={this.removeClick}>Remove
+            <h3 className="district">{location}</h3>
+            <button className="compare-btn" onClick={removeClick}>Remove
             </button>
           </div>
-          <div className="list">
-            <List data={this.props.allData}/>
-          </div>
-        </div>
-      );
+          <ul className="list">
+            <List data={allData} />
+          </ul>
+        </div>);
     } else {
       return (
-        <div className="card-grouping">
+        <div>
           <div className="top-of-card">
-            <h3 className="district">{this.props.location}</h3>
-            <button
-              className={this.state.toggleStateActive ? "compare-btn-off" : "compare-btn"} onClick={this.clickHandler}>Compare
+            <h3 className="district">{location}</h3>
+            <button className="compare-btn" onClick={clickHandler}>Compare
             </button>
           </div>
-          <div className="list">
-            <List data={this.props.allData} />
-          </div>
+          <ul className="list">
+            <List data ={allData}/>
+          </ul>
         </div>
       );
     }
 
-  }
+  };
 
-  render(){
-    return (
-      <div className="card">
-        {this.buildCards()}
-      </div>
-    );
-  }
-}
+  return (
+
+    <div className="card">
+      {buildCards()}
+    </div>
+  );
+
+};
 
 Card.propTypes = {
-  location: PropTypes.string.isRequired,
-  allData: PropTypes.objectOf(PropTypes.number).isRequired,
+  location: PropTypes.string,
+  allData: PropTypes.objectOf(PropTypes.number),
   forCompare: PropTypes.func,
-  compare: PropTypes.func
+  compare: PropTypes.func,
+  removeCompare: PropTypes.func
 };
 
 export default Card;

@@ -9,21 +9,21 @@ const CardContainer = ({ allData, compare, toggleStateActive }) => {
       location={district.location}
       allData={district.data}
       key={district.location}
-      compare={compare}
-      toggleStateActive={toggleStateActive} />;
+      compare={compare} />;
   });
 
   return (
     <div className="card-container">
-      <h2 className="data-info">Percent of Students in Enrolled in Full Day Kinder</h2>
+      <h2 className="data-info">
+        Percent of Students in Enrolled in Full Day Kinder</h2>
       {cards}
     </div>
   );
 };
 
 CardContainer.propTypes = {
-  allData: PropTypes.array.isRequired,
-  compare: PropTypes.func.isRequired,
+  allData: PropTypes.array,
+  compare: PropTypes.func,
   toggleStateActive: PropTypes.func
 };
 

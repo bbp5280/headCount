@@ -5,10 +5,15 @@ import Adapter from 'enzyme-adapter-react-15';
 import config from '../../test/setup.js';
 
 describe('CARD CONTAINER', () => {
-  let wrapper = shallow(<CardContainer />);
+  const mkFun = jest.fn();
+  let wrapper = shallow(<CardContainer {... {location:'COLORADO',
+                                              allData:[{2004: 0.24}],
+                                              key:'COLORADO',
+                                              compare:mkFun}}/>);
 
-  it('should..., () => {
+  it('should match the CardContainer snapshot', () => {
 
+    expect(wrapper).toMatchSnapshot();
   });
 
 });
