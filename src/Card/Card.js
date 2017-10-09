@@ -41,7 +41,7 @@ class Card extends Component{
   buildCards(props) {
     if (this.props.forCompare === true){
       return (
-        <div>
+        <div className="card-grouping">
           <div className="top-of-card">
             <h3 className="district">{this.props.location}</h3>
             <button className="compare-btn" onClick={this.removeClick}>Remove
@@ -54,7 +54,7 @@ class Card extends Component{
     } else {
 
       return (
-        <div>
+        <div className="card-grouping">
           <div className="top-of-card">
             <h3 className="district">{this.props.location}</h3>
             <button

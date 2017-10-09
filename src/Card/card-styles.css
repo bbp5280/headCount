@@ -54,20 +54,24 @@
 .toggle-compare-btn {
   background-color: #f3f3f3; }
 
-.info-container {
-  display: flex;
-  flex-direction: column;
-  width: 83px;
-  text-align: center;
-  border: 1px solid red; }
-
 .list {
   display: flex;
   flex-direction: row;
   padding: 12px; }
 
+.list div {
+  display: flex;
+  flex-direction: row; }
+
+.info-container {
+  display: flex;
+  flex-direction: column;
+  width: 83px;
+  text-align: center; }
+
 .data {
-  padding-bottom: 7px; }
+  padding-bottom: 7px;
+  color: #AC3B30; }
 
 .year {
   font-weight: bold; }
