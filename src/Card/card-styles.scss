@@ -63,15 +63,19 @@
   background-color: #f3f3f3;
 }
 
+
 .info-container {
+  //display: inline-block;
   display: flex;
   flex-direction: column;
   width: 83px;
   text-align: center;
+  border: 1px solid red;
 }
 
 .list {
   display: flex;
+  flex-direction: row;
   padding: 12px;
 }
 

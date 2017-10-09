@@ -16,7 +16,7 @@ class App extends Component {
     this.state = {
       data: [],
       compareArray: [],
-      comparisonData: {},
+      comparisonData: {}
     };
 
     this.districts = new DistrictRepository(kinderData);
@@ -32,8 +32,8 @@ class App extends Component {
   }
 
   handleSearch(event) {
-    const inputValue = event.target.value
-    const updatedValue = this.districts.findAllMatches(inputValue)
+    const inputValue = event.target.value;
+    const updatedValue = this.districts.findAllMatches(inputValue);
     this.setState({
       data: updatedValue
     });
@@ -48,7 +48,6 @@ class App extends Component {
     if (this.state.compareArray.length === 1) {
       const updatedCompareArray = [...this.state.compareArray, district];
       this.setState({compareArray: updatedCompareArray}, () => this.getData(this.state.compareArray));
-      ;
     }
 
     if (this.state.compareArray.length === 2) {
@@ -59,15 +58,13 @@ class App extends Component {
   }
 
   getData(compareArray) {
-    console.log(compareArray );
     const comparison = this.districts.compareDistrictAverages(compareArray[0], compareArray[1]);
-    console.log(comparison);
     this.setState({ comparisonData: comparison });
   }
 
   removeCompare(districtFind){
     const districtsNotToRemove = this.state.compareArray.filter(district => {
-      district !== districtFind})
+      district !== districtFind })
     this.setState({ compareArray: districtsNotToRemove })
   }
 
@@ -92,7 +89,9 @@ class App extends Component {
 
         <CardContainer {... data}
           compare={this.compareDistricts}
-          toggleStateActive={this.toggleStateActive}     />        <Footer />
+          toggleStateActive={this.toggleStateActive}     />
+          <ScrollBtn />
+        <Footer />
       </div>
     );
   }

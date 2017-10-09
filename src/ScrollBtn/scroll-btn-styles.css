@@ -1,4 +1,4 @@
-img {
+.arrow {
   height: 36px; }
 
 .scroll-top {
@@ -17,7 +17,7 @@ img {
     margin-right: 2%; } }
 
 @media (max-width: 650px) {
-  img {
+  .arrow {
     width: 25px; }
   .scroll-top {
     margin-right: 0.25%; } }

@@ -25,7 +25,7 @@ class ScrollBtn extends Component {
   render() {
     return (
       <button className="scroll-top" onClick={this.scrollToTop}>
-          <img src={arrowIcon} />
+          <img className="arrow" src={arrowIcon} />
       </button>
     )
   }

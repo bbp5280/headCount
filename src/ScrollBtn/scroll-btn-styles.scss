@@ -1,6 +1,7 @@
-img {
+.arrow {
   height: 36px;
 }
+
 .scroll-top {
   float: right;
   margin-bottom: 1.5%;
@@ -25,7 +26,7 @@ img {
 
 @media (max-width: 650px) {
 
-  img {
+  .arrow {
     width: 25px;
   }
 
