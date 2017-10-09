@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import arrowIcon from '../../assets/scroll-up-arrow.svg';
 
 class ScrollBtn extends Component {
@@ -27,9 +28,14 @@ class ScrollBtn extends Component {
       <button className="scroll-top" onClick={this.scrollToTop}>
         <img className="arrow" src={arrowIcon} />
       </button>
-    )
+    );
   }
 
 }
+
+ScrollBtn.propTypes = {
+  delayInMs: PropTypes.string,
+  scrollStepInPx: PropTypes.string
+};
 
 export default ScrollBtn;
