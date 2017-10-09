@@ -6,15 +6,6 @@ import List from './List'
 const Card = ({ location, allData, compare, forCompare, removeCompare }) => {
   const yearArray = Object.keys(allData);
 
-  // const mappedYears = yearArray.map(year => {
-  //   return (
-  //     <div className="info-container" key={year}>
-  //       <span className="data">{allData[year]}</span>
-  //       <span className="year">{year}</span>
-  //     </div>
-  //   );
-  // });
-
   const clickHandler = () => {
     compare(location);
   };
@@ -64,8 +55,8 @@ const Card = ({ location, allData, compare, forCompare, removeCompare }) => {
 };
 
 Card.propTypes = {
-  location: PropTypes.string.isRequired,
-  allData: PropTypes.objectOf(PropTypes.number).isRequired,
+  location: PropTypes.string,
+  allData: PropTypes.objectOf(PropTypes.number),
   forCompare: PropTypes.func,
   compare: PropTypes.func,
   removeCompare: PropTypes.func

@@ -1,0 +1,354 @@
+exports[`COMPARE CARD should match the CompareCard snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <CompareCard
+    comparisonData={
+        Object {
+            "ACADEMY 20": 0.407,
+            "COLORADO": 0.53,
+            "compared": 0.768,
+          }
+    }
+    getAvg={
+        Object {
+            "district1": "ACADEMY 20",
+            "district1Average": 0.407,
+            "district2": "COLORADO",
+            "district2Average": 0.768,
+          }
+    } />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": null,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <section
+          className="district1">
+          <h4
+                    className="district-name">
+                    ACADEMY 20
+          </h4>
+          <h5
+                    className="district-avg">
+                    Average: 
+                    0.407
+          </h5>
+</section>,
+        <h3>
+          0.768
+</h3>,
+        <section
+          className="district2">
+          <h4
+                    className="district-name">
+                    COLORADO
+          </h4>
+          <h5
+                    className="district-avg">
+                    Average: 
+                    0.768
+          </h5>
+</section>,
+      ],
+      "className": "compare-card",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": null,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <h4
+              className="district-name">
+              ACADEMY 20
+</h4>,
+            <h5
+              className="district-avg">
+              Average: 
+              0.407
+</h5>,
+          ],
+          "className": "district1",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "host",
+            "props": Object {
+              "children": "ACADEMY 20",
+              "className": "district-name",
+            },
+            "ref": null,
+            "rendered": "ACADEMY 20",
+            "type": "h4",
+          },
+          Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "Average: ",
+                0.407,
+              ],
+              "className": "district-avg",
+            },
+            "ref": null,
+            "rendered": Array [
+              "Average: ",
+              0.407,
+            ],
+            "type": "h5",
+          },
+        ],
+        "type": "section",
+      },
+      Object {
+        "instance": null,
+        "key": null,
+        "nodeType": "host",
+        "props": Object {
+          "children": 0.768,
+        },
+        "ref": null,
+        "rendered": 0.768,
+        "type": "h3",
+      },
+      Object {
+        "instance": null,
+        "key": null,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <h4
+              className="district-name">
+              COLORADO
+</h4>,
+            <h5
+              className="district-avg">
+              Average: 
+              0.768
+</h5>,
+          ],
+          "className": "district2",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "host",
+            "props": Object {
+              "children": "COLORADO",
+              "className": "district-name",
+            },
+            "ref": null,
+            "rendered": "COLORADO",
+            "type": "h4",
+          },
+          Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "Average: ",
+                0.768,
+              ],
+              "className": "district-avg",
+            },
+            "ref": null,
+            "rendered": Array [
+              "Average: ",
+              0.768,
+            ],
+            "type": "h5",
+          },
+        ],
+        "type": "section",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": null,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <section
+            className="district1">
+            <h4
+                        className="district-name">
+                        ACADEMY 20
+            </h4>
+            <h5
+                        className="district-avg">
+                        Average: 
+                        0.407
+            </h5>
+</section>,
+          <h3>
+            0.768
+</h3>,
+          <section
+            className="district2">
+            <h4
+                        className="district-name">
+                        COLORADO
+            </h4>
+            <h5
+                        className="district-avg">
+                        Average: 
+                        0.768
+            </h5>
+</section>,
+        ],
+        "className": "compare-card",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <h4
+                className="district-name">
+                ACADEMY 20
+</h4>,
+              <h5
+                className="district-avg">
+                Average: 
+                0.407
+</h5>,
+            ],
+            "className": "district1",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": null,
+              "nodeType": "host",
+              "props": Object {
+                "children": "ACADEMY 20",
+                "className": "district-name",
+              },
+              "ref": null,
+              "rendered": "ACADEMY 20",
+              "type": "h4",
+            },
+            Object {
+              "instance": null,
+              "key": null,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "Average: ",
+                  0.407,
+                ],
+                "className": "district-avg",
+              },
+              "ref": null,
+              "rendered": Array [
+                "Average: ",
+                0.407,
+              ],
+              "type": "h5",
+            },
+          ],
+          "type": "section",
+        },
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "host",
+          "props": Object {
+            "children": 0.768,
+          },
+          "ref": null,
+          "rendered": 0.768,
+          "type": "h3",
+        },
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <h4
+                className="district-name">
+                COLORADO
+</h4>,
+              <h5
+                className="district-avg">
+                Average: 
+                0.768
+</h5>,
+            ],
+            "className": "district2",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": null,
+              "nodeType": "host",
+              "props": Object {
+                "children": "COLORADO",
+                "className": "district-name",
+              },
+              "ref": null,
+              "rendered": "COLORADO",
+              "type": "h4",
+            },
+            Object {
+              "instance": null,
+              "key": null,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "Average: ",
+                  0.768,
+                ],
+                "className": "district-avg",
+              },
+              "ref": null,
+              "rendered": Array [
+                "Average: ",
+                0.768,
+              ],
+              "type": "h5",
+            },
+          ],
+          "type": "section",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactFifteenAdapter {
+      "options": Object {
+        "supportPrevContextArgumentOfComponentDidUpdate": true,
+      },
+    },
+  },
+}
+`;
