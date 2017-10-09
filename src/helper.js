@@ -6,9 +6,9 @@ export default class DistrictRepository {
     this.reduceData = this.reduceData.bind(this);
   }
 
-  reduceData(data) {
-    return data.reduce( (acc, obj) => {
-      const district = obj.Location.toUpperCase();
+  reduceData(dataToReduce) {
+    return dataToReduce.reduce( (acc, dataObj) => {
+      const district = dataObj.Location.toUpperCase();
 
       if (!acc[district]) {
         acc[district] = {
@@ -17,10 +17,10 @@ export default class DistrictRepository {
         };
       }
 
-      const year = [obj.TimeFrame];
-      let percent = Math.round([obj.Data * 1000]) / 1000;
+      const year = [dataObj.TimeFrame];
+      let percent = Math.round([dataObj.Data * 1000]) / 1000;
 
-      if (isNaN(obj.Data)) {
+      if (isNaN(dataObj.Data)) {
         percent = 0;
       }
 
@@ -40,10 +40,6 @@ export default class DistrictRepository {
       search.toUpperCase() === district.toUpperCase());
 
     return this.data[searchResult];
-
-    if (!searchResult) {
-      return undefined;
-    }
   }
 
   findAllMatches(search) {
